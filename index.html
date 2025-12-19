@@ -1,86 +1,618 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Oreo’s Legacy Kennel | Miniature Shih Tzu Stud Services</title>
+  <meta name="description" content="Oreo Winston — registered purebred Shih Tzu stud services in Georgia & nationwide. $2,100 flat fee or $1,800 + pick of the litter. Shipped semen available." />
+
   <style>
-    body {font-family: 'Georgia', serif; margin: 0; color: #111; background-color: #fff;}
-    header {text-align: center; padding: 2rem;}
-    header img {max-width: 200px;}
-    h1 {margin-top: 1rem;}
-    section {padding: 2rem; max-width: 800px; margin: auto;}
-    .cta {text-align: center; margin-top: 2rem; padding: 0 2rem 2rem;}
-    .button {background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;}
-    footer {text-align: center; padding: 1rem; background: #f1f1f1; font-size: 0.9rem;}
-    ul {padding-left: 1.2rem;}
-    li {margin: 0.4rem 0;}
-    .muted {color: #444; font-size: 0.95rem;}
+    :root{
+      --bg:#0b0b0c;
+      --panel:#111114;
+      --panel2:#15151a;
+      --text:#f4f4f5;
+      --muted:#b5b5bd;
+      --line:#24242b;
+      --accent:#ffffff;
+      --accent2:#d6d6de;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 50% -100px, #1a1a22 0%, var(--bg) 55%) fixed;
+    }
+
+    a{color:var(--text); text-decoration:none}
+    a:hover{opacity:.9}
+
+    /* Layout */
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .section{padding:72px 0}
+    .card{
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .grid{display:grid; gap:18px}
+    .muted{color:var(--muted)}
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color:var(--accent2);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+
+    /* Nav */
+    .navWrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,12,.75);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{width:38px; height:38px; border-radius:10px; border:1px solid rgba(255,255,255,.10)}
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.1;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    .brand .name strong{font-size:14px; letter-spacing:.2px}
+    .brand .name span{font-size:12px; color:var(--muted)}
+    .navlinks{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:13px;
+    }
+    .navlinks a{
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      color:var(--accent2);
+    }
+    .navlinks a:hover{
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+    }
+
+    /* Hero */
+    .hero{
+      padding:46px 0 28px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero h1{
+      margin:14px 0 10px;
+      font-size: clamp(34px, 4vw, 52px);
+      letter-spacing: -0.6px;
+      line-height:1.03;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--accent2);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.55;
+      font-size:15px;
+      max-width: 52ch;
+    }
+    .hero .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .btnPrimary{
+      background: #ffffff;
+      color:#0b0b0c;
+      border-color: #ffffff;
+    }
+    .btnGhost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .btnSmall{
+      padding:10px 12px;
+      font-weight:700;
+      border-radius:10px;
+      font-size:12px;
+    }
+
+    .heroCard{
+      padding:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .heroImg{
+      width:100%;
+      height:100%;
+      min-height: 380px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      filter: contrast(1.05) saturate(.95);
+    }
+    .heroOverlay{
+      position:absolute;
+      left:18px; right:18px; bottom:18px;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(11,11,12,.60);
+      backdrop-filter: blur(10px);
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .heroOverlay strong{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .heroOverlay span{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* Sections */
+    .kicker{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      letter-spacing:.18em;
+      font-size:11px;
+      color: var(--muted);
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size: clamp(22px, 2.2vw, 30px);
+      letter-spacing:-.3px;
+    }
+    .lead{
+      margin:0 0 22px;
+      color:var(--accent2);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.55;
+      max-width: 75ch;
+    }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+    }
+
+    .panel{
+      padding:20px;
+    }
+    .panel h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      letter-spacing:.1px;
+    }
+    .panel p, .panel li{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--accent2);
+      line-height:1.6;
+      font-size: 14px;
+    }
+    .panel ul{margin:10px 0 0; padding-left:18px}
+    .panel li{margin:6px 0}
+
+    .priceGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .priceCard{
+      padding:18px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .priceCard .tag{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:12px;
+      color: var(--muted);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .price{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:-.4px;
+      margin:0 0 8px;
+    }
+    .price small{
+      font-size:12px;
+      color: var(--muted);
+      font-weight:700;
+      letter-spacing:.1px;
+    }
+
+    .galleryGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .galleryMain img{
+      width:100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .galleryAside{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .placeholder{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:14px;
+      padding:16px;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    /* Footer */
+    footer{
+      padding:28px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:12px;
+    }
+    .footerRow{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .heroGrid{grid-template-columns: 1fr}
+      .heroImg{min-height: 320px}
+      .twoCol{grid-template-columns: 1fr}
+      .priceGrid{grid-template-columns: 1fr}
+      .galleryGrid{grid-template-columns: 1fr}
+      .galleryMain img{height: 360px}
+      .brand{min-width:unset}
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel Logo">
-    <h1>Oreo’s Legacy Kennel</h1>
-    <p><em>Miniature Shih Tzu Stud Services – Georgia & Nationwide</em></p>
-  </header>
+  <!-- NAV -->
+  <div class="navWrap">
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Oreo’s Legacy Kennel home">
+          <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo" />
+          <div class="name">
+            <strong>Oreo’s Legacy Kennel</strong>
+            <span>Miniature Shih Tzu Stud • Georgia & Nationwide</span>
+          </div>
+        </a>
 
-  <section id="about">
-    <h2>Meet Oreo Winston</h2>
-    <p>
-      Oreo is a registered miniature Shih Tzu with a rare black coat that shines brown in sunlight and features elegant white accents.
-      Healthy, compact, and full of personality, Oreo is the perfect stud for ethical, quality-focused breeding programs.
-    </p>
-  </section>
-
-  <section id="services">
-    <h2>Stud Services</h2>
-    <ul>
-      <li><strong>$2,100 flat fee</strong> OR <strong>$1,800 + pick of the litter</strong></li>
-      <li>Shipped semen (chilled/frozen) handled by licensed reproduction veterinarian</li>
-      <li><strong>One free repeat breeding</strong> if no pregnancy is confirmed within 12 months</li>
-    </ul>
-  </section>
-
-  <section id="credentials">
-    <h2>Credentials</h2>
-    <p>
-      Oreo (“Oreo Winston”) is a registered purebred Shih Tzu with documented lineage through the Continental Kennel Club (CKC).
-      Registration documentation is on file and available privately to approved breeders upon request.
-    </p>
-
-    <h2>Health &amp; Wellness</h2>
-    <p>
-      Oreo is in excellent health and is current on core vaccinations, including rabies, as verified by a licensed Georgia veterinarian.
-      For privacy and security, full veterinary records (rabies certificate, vaccine history, and visit notes) are shared only with serious
-      inquiries after initial screening and/or once a stud agreement is initiated.
-    </p>
-
-    <h2>Records Policy</h2>
-    <ul>
-      <li>Public listings show verification, not full document numbers.</li>
-      <li>Full records are provided directly to approved breeders via email.</li>
-    </ul>
-
-    <p class="muted">
-      <strong>Contact:</strong>
-      <a href="mailto:oreoslegacykennel@gmail.com">oreoslegacykennel@gmail.com</a>
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Located in Conyers, Georgia</p>
-    <p>Email: <a href="mailto:oreoslegacykennel@gmail.com">oreoslegacykennel@gmail.com</a></p>
-  </section>
-
-  <div class="cta">
-    <a href="mailto:oreoslegacykennel@gmail.com" class="button">Book a Breeding</a>
+        <div class="navlinks" role="navigation" aria-label="Primary">
+          <a href="#oreo">Oreo</a>
+          <a href="#services">Stud Services</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#gallery">Gallery</a>
+          <a href="/newsletter.html">Newsletter</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </div>
 
+  <!-- HERO -->
+  <div id="top" class="hero">
+    <div class="container heroGrid">
+      <div class="card panel">
+        <div class="pill">Ethical breeding • Health-forward • Premium stud services</div>
+        <h1>Meet Oreo Winston — a rare-coated, registered Shih Tzu stud.</h1>
+        <p>
+          Oreo is compact, confident, and exceptionally healthy — offered to quality-focused
+          breeding programs in Georgia and nationwide via shipped semen through a licensed
+          reproduction veterinarian.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="mailto:oreoslegacykennel@gmail.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Book a Breeding</a>
+          <a class="btn btnGhost" href="/newsletter.html">Join Oreo’s Newsletter</a>
+          <a class="btn btnGhost btnSmall" href="#services">See Pricing</a>
+        </div>
+
+        <div style="margin-top:18px; border-top:1px solid rgba(255,255,255,.06); padding-top:14px;">
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap:10px;">
+            <div class="pill" style="justify-content:center;">$2,100 flat fee</div>
+            <div class="pill" style="justify-content:center;">$1,800 + pick of litter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card heroCard">
+        <img class="heroImg" src="/images/oreo-2.png" alt="Oreo Winston portrait photo" />
+        <div class="heroOverlay">
+          <strong>Oreo Winston</strong>
+          <span>Conyers, Georgia • Serious inquiries only • Records shared privately</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OREO -->
+  <section id="oreo" class="section">
+    <div class="container">
+      <p class="kicker">About Oreo</p>
+      <h2>Small, rare, and built for legacy.</h2>
+      <p class="lead">
+        Oreo’s coat reads deep black with warm brown undertones in sunlight and refined white accents.
+        He’s healthy, well-kept, and offered for ethical, intentional breeding only.
+      </p>
+
+      <div class="twoCol">
+        <div class="card panel">
+          <h3>Temperament & Presence</h3>
+          <p>
+            Calm confidence, strong eye contact, and “main-character energy.” Oreo photographs well,
+            adapts quickly, and stays composed — great for breeding programs that value both health and type.
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h3>Service Area</h3>
+          <p>
+            Based in Conyers, Georgia. Nationwide service supported through shipped semen with a licensed
+            reproduction veterinarian. Local options can be discussed with approved breeders.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <p class="kicker">Stud Services</p>
+      <h2>Simple pricing. Clear terms. Protected health.</h2>
+      <p class="lead">
+        You’re choosing between a flat fee or a fee + puppy arrangement. A standard stud agreement is required
+        before any breeding or records exchange.
+      </p>
+
+      <div class="priceGrid">
+        <div class="card priceCard">
+          <div class="tag">Option A</div>
+          <p class="price">$2,100 <small>flat fee</small></p>
+          <ul>
+            <li>Best for breeders who don’t want a litter pick arrangement</li>
+            <li>Shipped semen coordinated through licensed reproduction veterinarian</li>
+            <li>Includes one free repeat (see policy below)</li>
+          </ul>
+        </div>
+
+        <div class="card priceCard">
+          <div class="tag">Option B</div>
+          <p class="price">$1,800 <small>+ pick of the litter</small></p>
+          <ul>
+            <li>Lower upfront cost + quality pick arrangement</li>
+            <li>Pick terms (timing, selection method) defined in agreement</li>
+            <li>Shipped semen coordinated through licensed reproduction veterinarian</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="twoCol" style="margin-top:18px;">
+        <div class="card panel">
+          <h3>Repeat Breeding Policy</h3>
+          <p>
+            One free repeat is offered if no pregnancy is confirmed within 12 months, provided all agreement
+            terms were followed and veterinary timing/handling protocols were met.
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h3>Preferred Method</h3>
+          <p>
+            Shipped semen (chilled/frozen) is the preferred option for safety, scheduling, and health control.
+            Local options can be considered case-by-case after screening.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials" class="section">
+    <div class="container">
+      <p class="kicker">Credentials & Health</p>
+      <h2>Verification without oversharing.</h2>
+      <p class="lead">
+        Trust is non-negotiable — and so is privacy. Public pages show verification. Full records are shared privately.
+      </p>
+
+      <div class="twoCol">
+        <div class="card panel">
+          <h3>Credentials</h3>
+          <p>
+            Oreo (“Oreo Winston”) is a registered purebred Shih Tzu with documented lineage through the
+            Continental Kennel Club (CKC). Registration documentation is on file and available privately
+            to approved breeders upon request.
+          </p>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btnGhost btnSmall" href="/docs/oreo-winston-certificate-watermark.pdf" target="_blank" rel="noopener">
+              View Certificate Preview (PDF)
+            </a>
+            <a class="btn btnGhost btnSmall" href="mailto:oreoslegacykennel@gmail.com?subject=Records%20Request%20-%20Oreo%20Winston">
+              Request Full Records
+            </a>
+          </div>
+
+          <p class="muted" style="margin-top:10px;">
+            Note: The certificate preview is watermarked and redacted to protect sensitive details.
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h3>Health & Wellness</h3>
+          <p>
+            Oreo is in excellent health and is current on core vaccinations, including rabies, as verified by a licensed
+            Georgia veterinarian. For privacy and security, full veterinary records (rabies certificate, vaccine history,
+            and visit notes) are shared only with serious inquiries after initial screening and/or once a stud agreement
+            is initiated.
+          </p>
+
+          <h3 style="margin-top:14px;">Records Policy</h3>
+          <ul>
+            <li>Public listings show verification, not full document numbers.</li>
+            <li>Full records are provided directly to approved breeders via email.</li>
+            <li>Records are shared after screening and/or when a stud agreement is initiated.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <p class="kicker">Gallery</p>
+      <h2>Photos now. Videos soon.</h2>
+      <p class="lead">
+        You’ve got Oreo-2 in place now. When you finish cleaning up Oreo-1 and add videos, this section is ready.
+      </p>
+
+      <div class="galleryGrid">
+        <div class="card panel galleryMain">
+          <img src="/images/oreo-2.png" alt="Oreo Winston featured photo" />
+          <p class="muted" style="margin:12px 0 0;">
+            Featured: Oreo Winston (oreo-2)
+          </p>
+        </div>
+
+        <div class="galleryAside">
+          <div class="placeholder">
+            <strong>Next photo slot (oreo-1):</strong><br/>
+            When you’re ready, drop <code>/images/oreo-1.jpg</code> (or .png) and we’ll add a second tile layout.
+          </div>
+
+          <div class="placeholder">
+            <strong>Video slot:</strong><br/>
+            When you add a video later, create <code>/videos/oreo-1.mp4</code> and we’ll embed it here with a clean player.
+          </div>
+
+          <div class="placeholder">
+            <strong>Newsletter hook:</strong><br/>
+            Want the funny quotes + facts? Push traffic to the newsletter page.<br/><br/>
+            <a class="btn btnPrimary btnSmall" href="/newsletter.html">Go to Newsletter Signup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <p class="kicker">Contact</p>
+      <h2>Serious inquiries only.</h2>
+      <p class="lead">
+        Located in Conyers, Georgia. Records are shared privately with approved breeders after screening and/or
+        once a stud agreement is initiated.
+      </p>
+
+      <div class="twoCol">
+        <div class="card panel">
+          <h3>Email</h3>
+          <p>
+            <a class="btn btnPrimary" href="mailto:oreoslegacykennel@gmail.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">
+              oreoslegacykennel@gmail.com
+            </a>
+          </p>
+          <p class="muted">Use subject line: “Stud Inquiry – Oreo Winston” for fastest response.</p>
+        </div>
+
+        <div class="card panel">
+          <h3>Newsletter</h3>
+          <p>Get updates, photos, and availability — delivered.</p>
+          <p>
+            <a class="btn btnGhost" href="/newsletter.html">Join Oreo’s Newsletter</a>
+          </p>
+          <p class="muted">Separate signup page keeps the home page clean and focused.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Oreo’s Legacy Kennel. All rights reserved.
+    <div class="container footerRow">
+      <div>© 2025 Oreo’s Legacy Kennel. All rights reserved.</div>
+      <div class="muted">
+        <a href="/newsletter.html">Newsletter</a> •
+        <a href="#credentials">Credentials</a> •
+        <a href="mailto:oreoslegacykennel@gmail.com">Email</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
-
