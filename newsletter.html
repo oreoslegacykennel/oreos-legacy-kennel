@@ -44,7 +44,94 @@
     a:hover{color:var(--blue)}
     .container{max-width:var(--max); margin:0 auto; padding:0 22px}
 
-    /* Top marquee photo strip */
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
+      gap:16px;
+    }
+
+    /* Brand with logo */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      line-height:1.05;
+      min-width: 220px;
+    }
+    .brandLogo{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(11,13,18,.12);
+      background:#fff;
+      flex:0 0 auto;
+    }
+    .brandLogo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .brandText{
+      display:flex;
+      flex-direction:column;
+    }
+    .brand strong{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .brand span{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .navLinks{
+      display:flex;
+      gap:16px;
+      font-size:13px;
+      color:var(--muted);
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navLinks a{
+      padding:6px 0;
+      border-radius:999px;
+    }
+    .navLinks a:hover{color:var(--ink)}
+
+    /* Contact CTA */
+    .ctaContact{
+      padding:10px 14px !important;
+      background: var(--blue);
+      border:1px solid var(--blue);
+      color:#fff !important;
+      font-weight:700;
+      letter-spacing:.2px;
+      line-height:1;
+    }
+    .ctaContact:hover{
+      background: var(--blue2);
+      border-color: var(--blue2);
+      color:#fff !important;
+    }
+
+    /* Marquee directly under navigation menu */
     .marquee{
       border-bottom:1px solid var(--line);
       background:var(--wash);
@@ -78,49 +165,6 @@
       object-fit:cover;
       display:block;
     }
-
-    /* Header */
-    header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 0;
-      gap:16px;
-    }
-    .brand{
-      display:flex;
-      flex-direction:column;
-      line-height:1.05;
-    }
-    .brand strong{
-      font-family:var(--serif);
-      font-weight:700;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .brand span{
-      font-size:12px;
-      color:var(--muted);
-    }
-    .navLinks{
-      display:flex;
-      gap:16px;
-      font-size:13px;
-      color:var(--muted);
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .navLinks a{padding:6px 0}
-    .navLinks a:hover{color:var(--ink)}
 
     /* Hero layout: clean + aligned */
     main{padding:34px 0 54px}
@@ -255,54 +299,87 @@
       align-items:center;
     }
 
+    /* Social icons */
+    .social{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .social a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid rgba(11,13,18,.10);
+      border-radius:999px;
+      color:var(--muted);
+      background:#fff;
+      transition: border-color .15s ease, color .15s ease, transform .06s ease;
+    }
+    .social a:hover{
+      color:var(--ink);
+      border-color: rgba(11,13,18,.18);
+      transform: translateY(-1px);
+    }
+    .icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+    }
+    .social span{font-size:12px}
+
     @media (max-width: 980px){
       .hero{grid-template-columns:1fr; gap:18px}
       .navLinks{display:none}
       .headline{font-size: clamp(38px, 10vw, 52px)}
+      .brand{min-width: unset}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Moving photo strip (exciting, puppy energy) -->
-  <div class="marquee" aria-label="Oreo photo strip">
-    <div class="container" style="position:relative;">
-      <!-- Duplicate images so the scroll loops smoothly.
-           For now, you only have oreo-2 in repo + oreo-1 soon.
-           This still works; swap/add more photos later. -->
-      <div class="marqueeTrack">
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-
-        <!-- second set for seamless loop -->
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-      </div>
-    </div>
-  </div>
-
   <header>
     <div class="container">
       <div class="nav">
         <a class="brand" href="/" aria-label="Oreo’s Legacy Kennel home">
-          <strong>Oreo’s Legacy Kennel</strong>
-          <span>Newsletter</span>
+          <div class="brandLogo" aria-hidden="true">
+            <!-- Update this path if your logo filename differs -->
+            <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo">
+          </div>
+          <div class="brandText">
+            <strong>Oreo’s Legacy Kennel</strong>
+            <span>Newsletter</span>
+          </div>
         </a>
 
         <nav class="navLinks" aria-label="Site">
-          <a href="/">Home</a>
           <a href="/#services">Services</a>
           <a href="/#credentials">Credentials</a>
           <a href="/#gallery">Gallery</a>
-          <a href="mailto:info@oreoslegacykennel.com">Email</a>
+          <a class="ctaContact" href="mailto:info@oreoslegacykennel.com?subject=Oreo%20Winston%20Inquiry">Contact</a>
         </nav>
+      </div>
+    </div>
+
+    <!-- Marquee directly under navigation -->
+    <div class="marquee" aria-label="Oreo photo strip">
+      <div class="container" style="position:relative;">
+        <div class="marqueeTrack">
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+
+          <!-- second set for seamless loop -->
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+        </div>
       </div>
     </div>
   </header>
@@ -471,9 +548,26 @@
   <footer>
     <div class="container footerRow">
       <div>© 2025 Oreo’s Legacy Kennel</div>
-      <div>
-        <a href="/">Home</a> •
-        <a href="mailto:info@oreoslegacykennel.com">Email</a>
+
+      <div class="social" aria-label="Social links">
+        <a href="https://www.instagram.com/oreoslegacykennel/" target="_blank" rel="noopener" aria-label="Instagram">
+          <!-- Instagram icon -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.5 2.75h9A4.75 4.75 0 0 1 21.25 7.5v9A4.75 4.75 0 0 1 16.5 21.25h-9A4.75 4.75 0 0 1 2.75 16.5v-9A4.75 4.75 0 0 1 7.5 2.75Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 16.25A4.25 4.25 0 1 0 12 7.75a4.25 4.25 0 0 0 0 8.5Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M17.2 6.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://x.com/oreoskennel" target="_blank" rel="noopener" aria-label="X">
+          <!-- X icon -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 18.5 10.6 13.2M13.4 10.1 18 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M6 5.5h4.7l7.3 13h-4.7L6 5.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <span>X</span>
+        </a>
       </div>
     </div>
   </footer>
