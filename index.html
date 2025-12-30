@@ -285,12 +285,12 @@
 
     /* Footer */
     footer{
-      padding:28px 0;
       border-top:1px solid var(--line);
+      padding:24px 0;
       color:var(--muted);
-      font-family:var(--sans);
       font-size:12px;
       background:#fff;
+      font-family:var(--sans);
     }
     .footerRow{
       display:flex;
@@ -299,6 +299,24 @@
       flex-wrap:wrap;
       align-items:center;
     }
+    .footerLinks{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .footerLinks a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid rgba(11,13,18,.10);
+      border-radius:999px;
+      color:var(--muted);
+      background:#fff;
+      transition: border-color .15s ease, color .15s ease, transform .06s ease;
+    }
+    .footerLinks a:hover{
+      color:var(--ink);
+      border-color: rgba(11,13,18,.18);
+      transform: translateY(-1px);
+    }
+    .icon{width:16px; height:16px; display:inline-block}
 
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr}
@@ -320,16 +338,16 @@
           <span>Conyers, GA</span>
         </a>
 
+        <!-- UPDATED: nav links = home, services, credentials, gallery, newsletter, inquire (CTA only) -->
         <nav class="navLinks" aria-label="Site">
+          <a href="#top">Home</a>
           <a href="#services">Services</a>
           <a href="#credentials">Credentials</a>
           <a href="#gallery">Gallery</a>
           <a href="/newsletter.html">Newsletter</a>
-          <a href="#contact">Contact</a>
         </nav>
 
         <div class="navCta">
-          <a class="btn btnText" href="/newsletter.html">Newsletter</a>
           <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire</a>
         </div>
       </div>
@@ -349,10 +367,13 @@
           </p>
 
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btnBlue" href="#services">View Options</a>
-            <a class="btn" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Email</a>
+            <!-- UPDATED: View Options -> View Services -->
+            <a class="btn btnBlue" href="#services">View Services</a>
+            <!-- UPDATED: Email -> Contact -->
+            <a class="btn" href="#contact">Contact</a>
           </div>
 
+          <!-- MUST REMAIN THE SAME (already unchanged) -->
           <div class="quietMeta">
             <span><strong style="color:var(--ink)">Location:</strong> Metro Atlanta</span>
             <span class="dot"><strong style="color:var(--ink)">Focus:</strong> Georgia breeders</span>
@@ -360,12 +381,7 @@
           </div>
         </div>
 
-        <div class="heroMedia" aria-label="Oreo hero photo">
-          <img class="heroImg" src="/images/oreo-2.png" alt="Oreo Winston portrait photo" />
-          <div class="caption">
-            <strong>Oreo Winston</strong> — Shih Tzu • Conyers, GA
-          </div>
-        </div>
+        <!-- REMOVED: photo beside title completely -->
       </div>
     </div>
 
@@ -470,22 +486,37 @@
             If it’s aligned, we move forward cleanly.
           </p>
 
+          <!-- UPDATED: remove the two CTAs, replace with single CTA -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">info@oreoslegacykennel.com</a>
-            <a class="btn" href="/newsletter.html">Newsletter</a>
+            <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Secure%20Your%20Puppies%20Now">Secure your puppies now</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- UPDATED: footer to match newsletter footer (social links w/icons) -->
   <footer>
     <div class="container footerRow">
       <div>© 2025 Oreo’s Legacy Kennel</div>
-      <div>
-        <a href="/newsletter.html">Newsletter</a> •
-        <a href="#services">Services</a> •
-        <a href="mailto:info@oreoslegacykennel.com">Email</a>
+
+      <div class="footerLinks" aria-label="Social links">
+        <a href="https://www.instagram.com/oreoslegacykennel/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.5 2.75h9A4.75 4.75 0 0 1 21.25 7.5v9A4.75 4.75 0 0 1 16.5 21.25h-9A4.75 4.75 0 0 1 2.75 16.5v-9A4.75 4.75 0 0 1 7.5 2.75Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 16.25A4.25 4.25 0 1 0 12 7.75a4.25 4.25 0 0 0 0 8.5Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M17.2 6.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://x.com/oreoskennel" target="_blank" rel="noopener" aria-label="X">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 18.5 10.6 13.2M13.4 10.1 18 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M6 5.5h4.7l7.3 13h-4.7L6 5.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <span>X</span>
+        </a>
       </div>
     </div>
   </footer>
