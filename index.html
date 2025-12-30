@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Oreo’s Newsletter | Oreo’s Legacy Kennel</title>
-  <meta name="description" content="Subscribe for Oreo updates, funny quotes, cool facts, and breeding availability in Georgia & nationwide." />
+  <title>Oreo’s Legacy Kennel | Miniature Shih Tzu Stud Services</title>
+  <meta name="description" content="Oreo Winston — registered purebred Shih Tzu stud services in Georgia & nationwide. $2,100 flat fee or $1,800 + pick of the litter. Shipped semen available." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b0d12" />
 
@@ -12,9 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- MailerLite font import (from embed) -->
-  <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1766058");</style>
 
   <style>
     :root{
@@ -31,9 +28,11 @@
 
       --max:1100px;
       --r:20px;
+      --shadow: 0 14px 40px rgba(2, 6, 23, .08);
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--ink);
@@ -48,7 +47,7 @@
     header{
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:50;
       background: rgba(255,255,255,.86);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--line);
@@ -67,7 +66,7 @@
       align-items:center;
       gap:12px;
       line-height:1.05;
-      min-width: 220px;
+      min-width: 240px;
     }
     .brandLogo{
       width:40px;
@@ -102,21 +101,18 @@
 
     .navLinks{
       display:flex;
-      gap:16px;
+      gap:18px;
       font-size:13px;
       color:var(--muted);
       align-items:center;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .navLinks a{
-      padding:6px 0;
-      border-radius:999px;
-    }
+    .navLinks a{padding:6px 0}
     .navLinks a:hover{color:var(--ink)}
 
-    /* CTA: Inquire */
-    .ctaContact{
+    /* Inquire CTA */
+    .cta{
       padding:10px 14px !important;
       background: var(--blue);
       border:1px solid var(--blue);
@@ -124,200 +120,205 @@
       font-weight:700;
       letter-spacing:.2px;
       line-height:1;
+      border-radius:999px;
     }
-    .ctaContact:hover{
+    .cta:hover{
       background: var(--blue2);
       border-color: var(--blue2);
       color:#fff !important;
     }
 
-    /* Marquee directly under navigation menu */
-    .marquee{
-      border-bottom:1px solid var(--line);
-      background:var(--wash);
-      overflow:hidden;
-    }
-    .marqueeTrack{
-      display:flex;
-      gap:10px;
-      padding:10px 0;
-      width:max-content;
-      animation: scroll 26s linear infinite;
-      will-change: transform;
-    }
-    .marquee:hover .marqueeTrack{animation-play-state:paused}
-    @keyframes scroll{
-      from{transform: translateX(0)}
-      to{transform: translateX(-50%)}
-    }
-    .marqueeImg{
-      width:140px;
-      aspect-ratio: 1 / 1;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(11,13,18,.10);
-      background:#fff;
-      flex:0 0 auto;
-    }
-    .marqueeImg img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* Hero layout */
+    /* Page spacing */
     main{padding:34px 0 54px}
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr; /* a bit more space for copy */
-      gap:28px;
-      align-items:start;
-      padding-top:18px;
-    }
 
-    .headline{
-      margin:0;
+    /* HERO (single column now) */
+    .hero{
+      padding-top:14px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid rgba(11,13,18,.10);
+      border-radius:999px;
+      background:var(--wash);
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:16px 0 10px;
       font-family:var(--serif);
       font-weight:700;
-      font-size: clamp(44px, 5.2vw, 64px);
+      font-size: clamp(44px, 5.2vw, 66px);
       line-height:1.03;
-      letter-spacing:-.7px;
+      letter-spacing:-.8px;
     }
-    .sub{
-      margin:14px 0 0;
+    .lead{
+      margin:0;
       color:var(--muted);
       font-size:15px;
       line-height:1.85;
-      max-width: 62ch;
+      max-width: 72ch;
     }
 
-    /* Body CTAs under title */
-    .bodyCtas{
+    .ctaRow{
+      margin-top:18px;
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:16px;
+      align-items:center;
     }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:10px 14px;
+      padding:12px 16px;
       border-radius:999px;
-      border:1px solid rgba(11,13,18,.14);
+      border:1px solid rgba(11,13,18,.12);
       background:#fff;
       color:var(--ink);
       font-weight:700;
       font-size:13px;
-      line-height:1;
-      transition: transform .06s ease, border-color .15s ease, background .15s ease, color .15s ease;
+      letter-spacing:.2px;
+      transition: transform .06s ease, border-color .15s ease, background .15s ease;
     }
-    .btn:hover{
-      border-color: rgba(11,13,18,.22);
-      transform: translateY(-1px);
-    }
+    .btn:active{transform: translateY(1px)}
     .btnPrimary{
       background: var(--blue);
       border-color: var(--blue);
       color:#fff;
     }
-    .btnPrimary:hover{
-      background: var(--blue2);
-      border-color: var(--blue2);
-      color:#fff;
-    }
+    .btnPrimary:hover{background: var(--blue2); border-color: var(--blue2); color:#fff}
+    .btnGhost:hover{border-color: rgba(11,13,18,.18); background: rgba(11,13,18,.02)}
 
-    .points{
-      margin:18px 0 0;
-      padding:0;
-      list-style:none;
+    .priceRow{
+      margin-top:20px;
       display:grid;
-      gap:10px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.7;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      max-width: 760px;
     }
-    .points li{
-      padding:10px 0;
-      border-bottom:1px solid rgba(11,13,18,.08);
-    }
-    .points strong{color:var(--ink); font-weight:600}
-
-    /* Form column: single clean panel */
-    .panel{
-      border:1px solid var(--line);
+    .priceCard{
+      border:1px solid rgba(11,13,18,.10);
       border-radius: var(--r);
-      padding:18px;
+      padding:16px;
       background:#fff;
+      box-shadow: none;
     }
-    .panelTop{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      margin-bottom:12px;
-    }
-    .panelTop .kicker{
+    .priceCard .label{
       font-size:12px;
       letter-spacing:.14em;
       text-transform:uppercase;
       color:var(--muted);
+      margin-bottom:8px;
     }
-    .panelTop .title{
-      font-size:20px;
-      font-weight:700;
+    .priceCard .amount{
+      margin:0 0 6px;
+      font-size:24px;
+      font-weight:800;
       letter-spacing:-.2px;
+      color:var(--ink);
     }
-    .panelTop .note{
+    .priceCard p{
+      margin:0;
       color:var(--muted);
       font-size:13px;
       line-height:1.6;
     }
 
-    /* Minimal MailerLite restyle */
-    #mlb2-34821352.ml-form-embedContainer{ width:100% !important; display:block !important; margin:0 !important; }
-    #mlb2-34821352 .ml-form-embedWrapper.embedForm{ max-width:100% !important; width:100% !important; }
-    #mlb2-34821352 .ml-form-embedWrapper{ border:none !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important; }
-    #mlb2-34821352 .ml-form-embedBody{ padding:0 !important; }
-    #mlb2-34821352 .ml-form-embedContent{ display:none !important; }
-    #mlb2-34821352 input[type="email"]{
-      width:100% !important;
-      border-radius:14px !important;
-      border:1px solid rgba(11,13,18,.18) !important;
-      padding:12px 12px !important;
-      font-size:14px !important;
-      font-family:var(--sans) !important;
-      background:#fff !important;
-      color:var(--ink) !important;
+    /* Sections */
+    .section{padding:64px 0; border-top:1px solid rgba(11,13,18,.08)}
+    .kicker{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 10px;
     }
-    #mlb2-34821352 .ml-form-interestGroupsRowCheckbox .label-description{
-      font-family:var(--sans) !important;
-      color:var(--ink) !important;
-      font-weight:600 !important;
-      font-size:13px !important;
+    h2{
+      margin:0 0 10px;
+      font-family:var(--serif);
+      font-weight:700;
+      font-size: clamp(28px, 3vw, 40px);
+      letter-spacing:-.4px;
     }
-    #mlb2-34821352 .ml-form-checkboxRow .label-description p,
-    #mlb2-34821352 .ml-form-embedPermissionsContent p{
-      font-family:var(--sans) !important;
-      color:var(--muted) !important;
-      font-size:12px !important;
-      line-height:1.6 !important;
+    .sectionLead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.85;
+      max-width: 80ch;
     }
-    #mlb2-34821352 .ml-form-embedSubmit button.primary{
-      width:100% !important;
-      background: var(--blue) !important;
-      border:1px solid var(--blue) !important;
-      border-radius:999px !important;
-      font-weight:700 !important;
-      letter-spacing:.2px !important;
-      padding:12px 14px !important;
-      font-family:var(--sans) !important;
-      cursor:pointer !important;
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:start;
     }
-    #mlb2-34821352 .ml-form-embedSubmit button.primary:hover{
-      background: var(--blue2) !important;
-      border-color: var(--blue2) !important;
+    .card{
+      border:1px solid rgba(11,13,18,.10);
+      border-radius: var(--r);
+      padding:18px;
+      background:#fff;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.1px;
+    }
+    .card p, .card li{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .card ul{margin:10px 0 0; padding-left:18px}
+
+    /* Featured gallery */
+    .galleryGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    .featured{
+      border:1px solid rgba(11,13,18,.10);
+      border-radius: var(--r);
+      overflow:hidden;
+      background:#fff;
+    }
+    .featured img{
+      width:100%;
+      height: 460px;
+      object-fit:cover;
+      display:block;
+    }
+    .featuredMeta{
+      padding:14px 16px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(11,13,18,.08);
+    }
+    .asideBox{
+      border:1px solid rgba(11,13,18,.10);
+      border-radius: var(--r);
+      padding:18px;
+      background:var(--wash);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: rgba(11,13,18,.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border:1px solid rgba(11,13,18,.08);
+      font-size: 12px;
+      color: var(--ink);
     }
 
     /* Footer */
@@ -335,15 +336,8 @@
       flex-wrap:wrap;
       align-items:center;
     }
-
-    /* Social icons */
-    .social{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-    }
-    .social a{
+    .footerLinks{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .footerLinks a{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -354,239 +348,289 @@
       background:#fff;
       transition: border-color .15s ease, color .15s ease, transform .06s ease;
     }
-    .social a:hover{
+    .footerLinks a:hover{
       color:var(--ink);
       border-color: rgba(11,13,18,.18);
       transform: translateY(-1px);
     }
     .icon{width:16px; height:16px; display:inline-block}
-    .social span{font-size:12px}
 
     @media (max-width: 980px){
-      .hero{grid-template-columns:1fr; gap:18px}
       .navLinks{display:none}
-      .headline{font-size: clamp(38px, 10vw, 52px)}
+      .priceRow{grid-template-columns: 1fr}
+      .twoCol{grid-template-columns:1fr}
+      .galleryGrid{grid-template-columns:1fr}
+      .featured img{height: 360px}
+      h1{font-size: clamp(38px, 10vw, 56px)}
       .brand{min-width: unset}
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="container">
       <div class="nav">
-        <a class="brand" href="/" aria-label="Oreo’s Legacy Kennel home">
+        <a class="brand" href="#top" aria-label="Oreo’s Legacy Kennel home">
           <div class="brandLogo" aria-hidden="true">
             <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo">
           </div>
           <div class="brandText">
             <strong>Oreo’s Legacy Kennel</strong>
-            <span>Newsletter</span>
+            <span>Georgia • Nationwide</span>
           </div>
         </a>
 
-        <!-- UPDATED NAV LINKS -->
-        <nav class="navLinks" aria-label="Site">
-          <a href="/">Home</a>
-          <a href="/#services">Services</a>
-          <a href="/#credentials">Credentials</a>
-          <a href="/#gallery">Gallery</a>
-          <a href="/newsletter.html" aria-current="page">Newsletter</a>
-          <a class="ctaContact" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire</a>
+        <!-- Updated navigation order + CTA -->
+        <nav class="navLinks" aria-label="Primary">
+          <a href="#top">Home</a>
+          <a href="#services">Services</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#gallery">Gallery</a>
+          <a href="/newsletter.html">Newsletter</a>
+          <a class="cta" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire</a>
         </nav>
-      </div>
-    </div>
-
-    <!-- Marquee directly under navigation -->
-    <div class="marquee" aria-label="Oreo photo strip">
-      <div class="container" style="position:relative;">
-        <div class="marqueeTrack">
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-
-          <!-- second set for seamless loop -->
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-        </div>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <div class="container">
-      <div class="hero">
-        <!-- Left: title + value -->
-        <section aria-label="Newsletter intro">
-          <h1 class="headline">Oreo’s Newsletter</h1>
-          <p class="sub">
-            Fun, polished updates — photos, personality, and availability — without the noise.
-            Georgia-first, then nationwide.
-          </p>
+      <section class="hero" aria-label="Intro">
+        <div class="pill">Registered • Ethical • Georgia-first</div>
 
-          <!-- UPDATED BODY CTAS -->
-          <div class="bodyCtas" aria-label="Quick actions">
-            <a class="btn btnPrimary" href="/#services">View Services</a>
-            <a class="btn" href="mailto:info@oreoslegacykennel.com?subject=Contact%20-%20Oreo%E2%80%99s%20Legacy%20Kennel">Contact</a>
+        <h1>Meet Oreo Winston — tiny, charming, and seriously well kept.</h1>
+
+        <p class="lead">
+          Oreo is a registered purebred Shih Tzu with a deep black coat that warms in sunlight and clean white accents.
+          He’s offered to quality-focused programs with clear terms, protected records, and a smooth process.
+        </p>
+
+        <!-- Under title: change "View Options" to "View Services" and "Email" to "Contact" -->
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire</a>
+          <a class="btn btnGhost" href="#services">View Services</a>
+          <a class="btn btnGhost" href="#contact">Contact</a>
+          <a class="btn btnGhost" href="/newsletter.html">Newsletter</a>
+        </div>
+
+        <div class="priceRow" aria-label="Pricing options">
+          <div class="priceCard">
+            <div class="label">Option A</div>
+            <div class="amount">$2,100</div>
+            <p>Flat fee — clean and simple.</p>
           </div>
-
-          <ul class="points" aria-label="What you get">
-            <li><strong>Oreo Updates</strong> — cute pics, funny quotes, and little moments.</li>
-            <li><strong>Oreo Breeding</strong> — availability + responsible process notes.</li>
-            <li><strong>No spam</strong> — unsubscribe anytime.</li>
-          </ul>
-        </section>
-
-        <!-- Right: Join the list (NO PHOTO) -->
-        <aside class="panel" aria-label="Signup form">
-          <div class="panelTop">
-            <div class="kicker">Signup</div>
-            <div class="title">Join the list</div>
-            <div class="note">Pick one or both lists, then subscribe.</div>
+          <div class="priceCard">
+            <div class="label">Option B</div>
+            <div class="amount">$1,800 + pick</div>
+            <p>Lower fee + pick of the litter.</p>
           </div>
-
-          <!-- ===== MailerLite Embed (functionality intact) ===== -->
-          <style type="text/css">
-            .ml-form-embedSubmitLoad { display:inline-block; width:20px; height:20px; }
-            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; }
-            .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:0; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-            .ml-form-embedSubmitLoad:after{
-              content:" "; display:block; width:11px; height:11px; margin:1px; border-radius:50%;
-              border:4px solid #fff; border-color:#ffffff #ffffff #ffffff transparent;
-              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-            }
-            @keyframes ml-form-embedSubmitLoad{ 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-          </style>
-
-          <div id="mlb2-34821352" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-34821352">
-            <div class="ml-form-align-center">
-              <div class="ml-form-embedWrapper embedForm">
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-
-                  <div class="ml-form-embedContent">
-                    <h4>Oreo's Newsletter</h4>
-                    <p>Signup for news and special offers!</p>
-                  </div>
-
-                  <form class="ml-block-form"
-                        action="https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/subscribe"
-                        data-code=""
-                        method="post"
-                        target="_blank">
-
-                    <div class="ml-form-formContent">
-                      <div class="ml-form-fieldRow ml-last-item">
-                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input aria-label="email" aria-required="true" type="email" class="form-control"
-                                 name="fields[email]" placeholder="Email" autocomplete="email">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-interestGroupsRow ml-block-groups ml-validate-required">
-                      <div class="ml-form-interestGroupsRowCheckbox group">
-                        <label>
-                          <input type="checkbox" name="groups[]" value="174170592279266540">
-                          <div class="label-description">Oreo Updates</div>
-                        </label>
-                      </div>
-
-                      <div class="ml-form-interestGroupsRowCheckbox last-group">
-                        <label>
-                          <input type="checkbox" name="groups[]" value="174170602193553316">
-                          <div class="label-description">Oreo Breeding</div>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-checkboxRow ml-validate-required">
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <div class="label-description">
-                          <p>Opt in to receive news and updates.</p>
-                        </div>
-                      </label>
-                    </div>
-
-                    <div class="ml-form-embedPermissions">
-                      <div class="ml-form-embedPermissionsContent default privacy-policy">
-                        <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-recaptcha ml-validate-required" style="float:left;">
-                      <style type="text/css">
-                        .ml-form-recaptcha { margin-bottom: 16px; }
-                        .ml-form-recaptcha.ml-error iframe { border: solid 1px #ff0000; }
-                        @media screen and (max-width: 480px) {
-                          .ml-form-recaptcha { width: 220px!important }
-                          .g-recaptcha {
-                            transform: scale(0.78);
-                            -webkit-transform: scale(0.78);
-                            transform-origin: 0 0;
-                            -webkit-transform-origin: 0 0;
-                          }
-                        }
-                      </style>
-                      <script src="https://www.google.com/recaptcha/api.js"></script>
-                      <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                    </div>
-
-                    <input type="hidden" name="ml-submit" value="1">
-
-                    <div class="ml-form-embedSubmit">
-                      <button type="submit" class="primary">Subscribe</button>
-                      <button disabled="disabled" style="display:none;" type="button" class="loading">
-                        <div class="ml-form-embedSubmitLoad"></div>
-                        <span class="sr-only">Loading...</span>
-                      </button>
-                    </div>
-
-                    <input type="hidden" name="anticsrf" value="true">
-                  </form>
-                </div>
-
-                <div class="ml-form-successBody row-success" style="display:none">
-                  <div class="ml-form-successContent">
-                    <h4>Thank you!</h4>
-                    <p>You have successfully joined our subscriber list.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <script>
-            function ml_webform_success_34821352() {
-              var $ = ml_jQuery || jQuery;
-              $('.ml-subscribe-form-34821352 .row-success').show();
-              $('.ml-subscribe-form-34821352 .row-form').hide();
-            }
-          </script>
-          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-          <script>fetch("https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/takel")</script>
-          <!-- ===== /MailerLite Embed ===== -->
-
-          <p style="margin:14px 0 0; color:var(--muted); font-size:12px; line-height:1.6;">
-            Prefer email? <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue); font-weight:600;">info@oreoslegacykennel.com</a>
-          </p>
-        </aside>
-      </div>
+        </div>
+      </section>
     </div>
+
+    <!-- OREO -->
+    <section id="oreo" class="section" aria-label="About Oreo">
+      <div class="container">
+        <p class="kicker">About Oreo</p>
+        <h2>Cute, compact, and confident.</h2>
+        <p class="sectionLead">
+          Oreo is tiny and rare — with a coat that looks black at first glance but warms up in the sun.
+          He’s offered for intentional breeding only, with a clear screening process and a standard agreement.
+        </p>
+
+        <div class="twoCol">
+          <div class="card">
+            <h3>What you’re really getting</h3>
+            <ul>
+              <li>Premium presentation (he photographs extremely well)</li>
+              <li>Verified credentials and protected record handling</li>
+              <li>Clear pricing + repeat policy (no confusion, no drama)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Engagement vibe</h3>
+            <p>
+              Oreo’s page is meant to be fun — cute photos, funny quotes, cool facts — while keeping the
+              business side clean and professional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-label="Stud Services">
+      <div class="container">
+        <p class="kicker">Stud Services</p>
+        <h2>Clear options, premium handling.</h2>
+        <p class="sectionLead">
+          Choose a flat fee or a fee + puppy arrangement. A stud agreement is required before any breeding and
+          before sharing full records.
+        </p>
+
+        <div class="twoCol">
+          <div class="card">
+            <h3>Option A — $2,100 flat fee</h3>
+            <ul>
+              <li>Best for breeders who want simple terms</li>
+              <li>Preferred method: shipped semen coordinated through a licensed reproduction veterinarian</li>
+              <li>Includes one free repeat breeding (see policy)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Option B — $1,800 + pick of the litter</h3>
+            <ul>
+              <li>Lower upfront cost + a quality pick arrangement</li>
+              <li>Pick timing and selection method defined in the agreement</li>
+              <li>Preferred method: shipped semen coordinated through a licensed reproduction veterinarian</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="twoCol" style="margin-top:18px;">
+          <div class="card">
+            <h3>Repeat breeding policy</h3>
+            <p>
+              One free repeat is offered if no pregnancy is confirmed within 12 months, provided all agreement terms
+              were followed and veterinary timing/handling protocols were met.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Start here</h3>
+            <p>Email to request availability, screening, and next steps.</p>
+            <p style="margin-top:12px;">
+              <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire Now</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="credentials" class="section" aria-label="Credentials and Health">
+      <div class="container">
+        <p class="kicker">Credentials & Health</p>
+        <h2>Verified — with privacy and control.</h2>
+        <p class="sectionLead">
+          Trust matters, but oversharing gets documents misused. This site shows verification publicly and shares full records privately.
+        </p>
+
+        <div class="twoCol">
+          <div class="card">
+            <h3>Credentials</h3>
+            <p>
+              Oreo (“Oreo Winston”) is a registered purebred Shih Tzu with documented lineage through the
+              Continental Kennel Club (CKC). Registration documentation is on file and available privately
+              to approved breeders upon request.
+            </p>
+
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btnGhost" href="/docs/oreo-winston-certificate-watermark.pdf" target="_blank" rel="noopener">
+                View Certificate Preview (PDF)
+              </a>
+              <a class="btn btnGhost" href="mailto:info@oreoslegacykennel.com?subject=Records%20Request%20-%20Oreo%20Winston">
+                Request Full Records
+              </a>
+            </div>
+
+            <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+              The preview is watermarked/redacted to protect sensitive details.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Health & Wellness</h3>
+            <p>
+              Oreo is in excellent health and is current on core vaccinations, including rabies, as verified by a licensed
+              Georgia veterinarian. Full veterinary records are shared only with serious inquiries after screening and/or
+              once a stud agreement is initiated.
+            </p>
+
+            <h3 style="margin-top:14px;">Records Policy</h3>
+            <ul>
+              <li>Public listings show verification, not full document numbers.</li>
+              <li>Full records are provided directly to approved breeders via email.</li>
+              <li>Records are shared after screening and/or when a stud agreement is initiated.</li>
+            </ul>
+
+            <p style="margin-top:12px;">
+              <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Contact</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY (featured is enough; no hero side photo) -->
+    <section id="gallery" class="section" aria-label="Gallery">
+      <div class="container">
+        <p class="kicker">Gallery</p>
+        <h2>Featured photo + room to grow.</h2>
+        <p class="sectionLead">
+          Featured uses <code>/images/oreo-1</code>. If it doesn’t load, the page falls back to <code>oreo-2</code>.
+          When you’re ready, we’ll add a clean grid and videos.
+        </p>
+
+        <div class="galleryGrid">
+          <div class="featured">
+            <img src="/images/oreo-1.jpg" alt="Oreo Winston featured photo (oreo-1)"
+                 onerror="this.onerror=null;this.src='/images/oreo-2.png';" />
+            <div class="featuredMeta">Featured: Oreo Winston</div>
+          </div>
+
+          <div class="asideBox">
+            <strong style="color:var(--ink)">Next upgrades (when you’re ready)</strong><br><br>
+            • Add 6–12 photos for a luxury grid<br>
+            • Add 1 short video clip for “puppy energy”<br>
+            • Add FAQ + breeder screening form for conversions<br><br>
+            <a class="btn btnPrimary" href="/newsletter.html">Join Newsletter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container">
+        <p class="kicker">Contact</p>
+        <h2>Ready when you are.</h2>
+        <p class="sectionLead">
+          Located in Conyers, Georgia. Records are shared privately with approved breeders after screening and/or when a stud agreement starts.
+        </p>
+
+        <div class="twoCol">
+          <div class="card">
+            <h3>Email</h3>
+            <p style="margin-top:10px;">
+              <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">
+                info@oreoslegacykennel.com
+              </a>
+            </p>
+            <p style="color:var(--muted); font-size:13px;">Use subject: “Stud Inquiry – Oreo Winston” for fastest response.</p>
+          </div>
+
+          <div class="card">
+            <h3>Newsletter</h3>
+            <p>Get availability, photos, and Oreo content — delivered.</p>
+            <p style="margin-top:12px;">
+              <a class="btn btnGhost" href="/newsletter.html">Join Oreo’s Newsletter</a>
+            </p>
+            <p style="color:var(--muted); font-size:13px;">Keeps the home page clean and conversion-focused.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container footerRow">
-      <div>© 2025 Oreo’s Legacy Kennel</div>
+      <div>© 2025 Oreo’s Legacy Kennel. All rights reserved.</div>
 
-      <div class="social" aria-label="Social links">
+      <div class="footerLinks" aria-label="Social links">
         <a href="https://www.instagram.com/oreoslegacykennel/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M7.5 2.75h9A4.75 4.75 0 0 1 21.25 7.5v9A4.75 4.75 0 0 1 16.5 21.25h-9A4.75 4.75 0 0 1 2.75 16.5v-9A4.75 4.75 0 0 1 7.5 2.75Z" stroke="currentColor" stroke-width="1.6"/>
@@ -606,6 +650,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
