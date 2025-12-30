@@ -145,24 +145,33 @@
       color:#fff;
     }
     .btnBlue:hover{background: var(--blue2)}
-    .btnText{
-      border:none;
-      background:transparent;
-      padding:0;
-      color:var(--muted);
-    }
-    .btnText:hover{color:var(--ink)}
 
-    /* HERO: image + minimal copy */
-    .hero{
-      padding:46px 0 26px;
-    }
+    /* HERO */
+    .hero{ padding:46px 0 26px; }
     .heroGrid{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:26px;
+      grid-template-columns: 1fr;
+      gap:0;
       align-items:center;
     }
+
+    /* NEW: hero top row with logo beside kicker */
+    .heroTop{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .heroLogo{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:var(--wash);
+      object-fit:cover;
+      flex:0 0 auto;
+    }
+
     h1{
       font-family:var(--serif);
       font-weight:700;
@@ -170,6 +179,13 @@
       line-height:1.03;
       margin:0 0 14px;
       letter-spacing:-.6px;
+    }
+    .kicker{
+      font-family:var(--sans);
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
     .sub{
       font-family:var(--sans);
@@ -194,31 +210,8 @@
       color:rgba(11,13,18,.35);
     }
 
-    .heroMedia{
-      border-radius: var(--r);
-      overflow:hidden;
-      border:1px solid var(--line);
-      background: var(--wash);
-    }
-    .heroImg{
-      width:100%;
-      height: 520px;
-      object-fit: cover;
-    }
-    .caption{
-      padding:14px 16px;
-      background:#fff;
-      border-top:1px solid var(--line);
-      font-family:var(--sans);
-      font-size:13px;
-      color:var(--muted);
-    }
-    .caption strong{color:var(--ink); font-weight:600}
-
-    /* Sections: text only */
-    section{
-      padding:54px 0;
-    }
+    /* Sections */
+    section{ padding:54px 0; }
     .sectionTitle{
       display:flex;
       justify-content:space-between;
@@ -232,13 +225,6 @@
       font-size: 28px;
       margin:0;
       letter-spacing:-.3px;
-    }
-    .kicker{
-      font-family:var(--sans);
-      font-size:12px;
-      color:var(--muted);
-      letter-spacing:.14em;
-      text-transform:uppercase;
     }
     .cols{
       display:grid;
@@ -319,8 +305,6 @@
     .icon{width:16px; height:16px; display:inline-block}
 
     @media (max-width: 980px){
-      .heroGrid{grid-template-columns: 1fr}
-      .heroImg{height: 380px}
       .cols{grid-template-columns: 1fr}
       .featuredWrap{grid-template-columns: 1fr}
       .featuredMedia img{height: 340px}
@@ -335,10 +319,9 @@
       <div class="nav">
         <a class="brand" href="#top" aria-label="Oreo’s Legacy Kennel home">
           <strong>Oreo’s Legacy Kennel</strong>
-          <span>Conyers, GA</span>
+          <!-- UPDATED: removed "Conyers, GA" -->
         </a>
 
-        <!-- UPDATED: nav links = home, services, credentials, gallery, newsletter, inquire (CTA only) -->
         <nav class="navLinks" aria-label="Site">
           <a href="#top">Home</a>
           <a href="#services">Services</a>
@@ -359,7 +342,12 @@
     <div class="hero">
       <div class="container heroGrid">
         <div>
-          <div class="kicker">Registered Shih Tzu • Georgia-first</div>
+          <!-- UPDATED: logo beside top section (kicker row) -->
+          <div class="heroTop">
+            <img class="heroLogo" src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo" />
+            <div class="kicker">Registered Shih Tzu • Georgia-first</div>
+          </div>
+
           <h1>Luxury, tiny, and unforgettable.</h1>
           <p class="sub">
             Oreo Winston is a registered purebred Shih Tzu offered for intentional breeding programs.
@@ -367,21 +355,16 @@
           </p>
 
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <!-- UPDATED: View Options -> View Services -->
             <a class="btn btnBlue" href="#services">View Services</a>
-            <!-- UPDATED: Email -> Contact -->
             <a class="btn" href="#contact">Contact</a>
           </div>
 
-          <!-- MUST REMAIN THE SAME (already unchanged) -->
           <div class="quietMeta">
             <span><strong style="color:var(--ink)">Location:</strong> Metro Atlanta</span>
             <span class="dot"><strong style="color:var(--ink)">Focus:</strong> Georgia breeders</span>
             <span class="dot"><strong style="color:var(--ink)">Contact:</strong> info@oreoslegacykennel.com</span>
           </div>
         </div>
-
-        <!-- REMOVED: photo beside title completely -->
       </div>
     </div>
 
@@ -486,16 +469,14 @@
             If it’s aligned, we move forward cleanly.
           </p>
 
-          <!-- UPDATED: remove the two CTAs, replace with single CTA -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Secure%20Your%20Puppies%20Now">Secure your puppies now</a>
+            <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Secure%20Your%20Puppies%20Now">Secure your puppies now!</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- UPDATED: footer to match newsletter footer (social links w/icons) -->
   <footer>
     <div class="container footerRow">
       <div>© 2025 Oreo’s Legacy Kennel</div>
@@ -507,7 +488,6 @@
             <path d="M12 16.25A4.25 4.25 0 1 0 12 7.75a4.25 4.25 0 0 0 0 8.5Z" stroke="currentColor" stroke-width="1.6"/>
             <path d="M17.2 6.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <span>Instagram</span>
         </a>
 
         <a href="https://x.com/oreoskennel" target="_blank" rel="noopener" aria-label="X">
@@ -515,7 +495,6 @@
             <path d="M6 18.5 10.6 13.2M13.4 10.1 18 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
             <path d="M6 5.5h4.7l7.3 13h-4.7L6 5.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
           </svg>
-          <span>X</span>
         </a>
       </div>
     </div>
