@@ -1,0 +1,5 @@
+/images/*  /images/:splat  200
+/docs/*    /docs/:splat    200
+/newsletter.html  /newsletter.html  200
+/         /index.html     200
+/*        /index.html     200

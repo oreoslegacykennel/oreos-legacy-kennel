@@ -1,0 +1,5 @@
+/images/*
+  Cache-Control: public, max-age=14400, must-revalidate
+
+/docs/*
+  Cache-Control: public, max-age=14400, must-revalidate
