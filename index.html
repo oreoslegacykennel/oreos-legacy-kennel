@@ -1,161 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Oreo’s Legacy Kennel | Miniature Shih Tzu Stud Services</title>
-  <meta name="description" content="Oreo Winston — registered purebred Shih Tzu stud services in Georgia & nationwide. $2,100 flat fee or $1,800 + pick of the litter. Shipped semen available." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Oreo’s Legacy Kennel | Shih Tzu Stud Services in Georgia</title>
+  <meta name="description" content="Oreo Winston — registered purebred Shih Tzu stud services based in Conyers, Georgia. Premium process. Clear terms. Nationwide options available." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B0D12" />
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="US-GA" />
+  <meta name="geo.placename" content="Conyers, Georgia" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Oreo’s Legacy Kennel — Shih Tzu Stud Services (Georgia)" />
+  <meta property="og:description" content="Boujee Shih Tzu energy. Premium, ethical stud services in Georgia with nationwide options." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.oreoslegacykennel.com/images/oreo-2.png" />
+  <meta property="og:url" content="https://www.oreoslegacykennel.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Oreo’s Legacy Kennel",
+    "url": "https://www.oreoslegacykennel.com/",
+    "image": "https://www.oreoslegacykennel.com/images/oreo-2.png",
+    "email": "info@oreoslegacykennel.com",
+    "areaServed": [
+      { "@type": "State", "name": "Georgia" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Conyers",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "description": "Registered purebred Shih Tzu stud services based in Conyers, Georgia. Premium process, clear terms, nationwide options available."
+  }
+  </script>
 
   <style>
     :root{
-      /* Brand: Black / White / Blue */
       --ink:#0b0d12;
-      --text:#0f172a;
-      --muted:#475569;
+      --paper:#ffffff;
+      --wash:#f6f7fb;
 
-      --bg:#ffffff;
-      --bg2:#f7f9fc;
+      --line:rgba(11,13,18,.10);
+      --line2:rgba(11,13,18,.16);
 
-      --line:#e6eaf2;
-      --panel:#ffffff;
-      --shadow: 0 14px 40px rgba(2, 6, 23, .08);
+      --muted:rgba(11,13,18,.62);
+      --muted2:rgba(11,13,18,.46);
 
-      --blue:#2563eb;      /* primary */
-      --blue2:#1d4ed8;     /* hover */
-      --blueSoft:#e8f0ff;  /* pill */
-      --black:#0b0d12;
+      --blue:#1f4bd8;      /* luxe blue */
+      --blue2:#173bb0;
 
-      --radius:18px;
+      --shadow: 0 18px 50px rgba(11,13,18,.10);
+      --shadow2: 0 10px 26px rgba(11,13,18,.08);
+
+      --r:18px;
       --max: 1120px;
+
+      --serif: "Playfair Display", ui-serif, Georgia, serif;
+      --sans:  "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 10% -10%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 55%),
-        radial-gradient(900px 520px at 90% -10%, rgba(37,99,235,.10) 0%, rgba(37,99,235,0) 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color:var(--ink);
+      background: linear-gradient(180deg, var(--paper) 0%, var(--wash) 100%);
     }
+    a{color:inherit; text-decoration:none}
+    a:hover{color:var(--blue)}
+    img{max-width:100%; display:block}
 
-    a{color:var(--blue); text-decoration:none}
-    a:hover{color:var(--blue2)}
-
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-    .section{padding:72px 0}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+    .section{padding:84px 0}
     .card{
-      background: var(--panel);
+      background: var(--paper);
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border-radius:var(--r);
+      box-shadow:var(--shadow2);
     }
     .muted{color:var(--muted)}
-    .grid{display:grid; gap:18px}
+    .muted2{color:var(--muted2)}
+    .thin{font-weight:500}
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
 
     /* NAV */
     .navWrap{
       position:sticky;
       top:0;
       z-index:50;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(15,23,42,.08);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
     }
     nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 0;
-      gap:12px;
+      padding:16px 0;
+      gap:16px;
     }
     .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brandMark{
+      width:40px; height:40px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      overflow:hidden;
+    }
+    .brandText{line-height:1.05}
+    .brandText strong{
+      font-family: var(--serif);
+      font-weight:700;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .brandText span{
+      display:block;
+      font-family: var(--sans);
+      font-size:12px;
+      color:var(--muted2);
+      margin-top:4px;
+    }
+
+    .navLinks{
       display:flex;
       align-items:center;
-      gap:12px;
-      min-width: 240px;
-    }
-    .brand img{
-      width:40px;
-      height:40px;
-      border-radius:12px;
-      border:1px solid rgba(15,23,42,.12);
-      background:#fff;
-      object-fit:cover;
-    }
-    .brand .name{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    }
-    .brand .name strong{font-size:14px; letter-spacing:.2px; color: var(--ink)}
-    .brand .name span{font-size:12px; color:var(--muted)}
-
-    .navlinks{
-      display:flex;
-      gap:10px;
+      gap:14px;
+      font-family: var(--sans);
+      font-size:13px;
+      color:var(--muted);
       flex-wrap:wrap;
       justify-content:flex-end;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:13px;
     }
-    .navlinks a{
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
-      color: var(--ink);
-      opacity:.92;
-    }
-    .navlinks a:hover{
-      border-color:rgba(37,99,235,.18);
-      background: rgba(37,99,235,.06);
-      color: var(--ink);
-      opacity:1;
+    .navLinks a{padding:8px 10px; border-radius:12px}
+    .navLinks a:hover{background: rgba(31,75,216,.06); color: var(--ink)}
+
+    .navCTA{
+      display:flex; gap:10px; align-items:center;
     }
 
-    /* HERO */
-    .hero{padding:44px 0 24px}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .heroCard{padding:22px}
-    .pill{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 12px;
-      border:1px solid rgba(37,99,235,.22);
-      border-radius:999px;
-      background: var(--blueSoft);
-      color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:12px;
-      letter-spacing:.2px;
-      width: fit-content;
-    }
-    .hero h1{
-      margin:14px 0 10px;
-      font-size: clamp(34px, 4vw, 52px);
-      letter-spacing: -0.8px;
-      line-height:1.05;
-      color: var(--ink);
-    }
-    .hero p{
-      margin:0 0 16px;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.6;
-      font-size:15px;
-      max-width: 56ch;
-    }
-
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    /* Buttons */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -163,248 +166,338 @@
       gap:10px;
       padding:12px 14px;
       border-radius:14px;
-      border:1px solid rgba(15,23,42,.12);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-weight:800;
+      border:1px solid var(--line2);
+      font-family: var(--sans);
+      font-weight:700;
       font-size:13px;
       letter-spacing:.2px;
-      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      cursor:pointer;
+      white-space:nowrap;
     }
     .btn:active{transform: translateY(1px)}
     .btnPrimary{
+      background: var(--ink);
+      color:#fff;
+      border-color: var(--ink);
+      box-shadow: var(--shadow2);
+    }
+    .btnPrimary:hover{background: #111520}
+    .btnBlue{
       background: var(--blue);
       color:#fff;
       border-color: var(--blue);
-      box-shadow: 0 10px 18px rgba(37,99,235,.22);
+      box-shadow: 0 14px 30px rgba(31,75,216,.18);
     }
-    .btnPrimary:hover{background: var(--blue2); border-color: var(--blue2); color:#fff}
+    .btnBlue:hover{background: var(--blue2); border-color: var(--blue2)}
     .btnGhost{
       background:#fff;
-      color: var(--ink);
-      border-color: rgba(15,23,42,.14);
+      color:var(--ink);
     }
-    .btnGhost:hover{background: rgba(37,99,235,.06); border-color: rgba(37,99,235,.22); color: var(--ink)}
+    .btnGhost:hover{border-color: rgba(31,75,216,.30)}
     .btnSmall{padding:10px 12px; border-radius:12px; font-size:12px}
 
-    .priceRow{
+    /* HERO */
+    .hero{
+      padding:56px 0 28px;
+    }
+    .heroGrid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top:16px;
+      grid-template-columns: 1.05fr .95fr;
+      gap:20px;
+      align-items:stretch;
     }
-    .priceMini{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:16px;
-      padding:14px;
-      background: linear-gradient(180deg, #fff 0%, #fafbff 100%);
+    .heroLeft{padding:30px}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid rgba(31,75,216,.18);
+      border-radius:999px;
+      background: rgba(31,75,216,.06);
+      font-family: var(--sans);
+      font-size:12px;
+      color:var(--ink);
+      width:fit-content;
     }
-    .priceMini .label{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:11px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+    h1{
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.6vw, 56px);
+      line-height:1.02;
+      letter-spacing:-.8px;
+      margin:16px 0 12px;
+    }
+    .heroCopy{
+      font-family: var(--sans);
       color: var(--muted);
-      margin-bottom:8px;
+      line-height:1.7;
+      font-size:15px;
+      max-width: 62ch;
+      margin:0 0 18px;
     }
-    .priceMini .amount{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:22px;
-      font-weight:900;
-      color: var(--ink);
-      margin:0 0 6px;
+    .heroActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:18px;
     }
-    .priceMini p{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    .heroMeta{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      font-family: var(--sans);
       font-size:13px;
-      color: var(--muted);
-      line-height:1.45;
+      color: var(--muted2);
+    }
+    .metaItem strong{
+      display:block;
+      color: var(--ink);
+      font-size:13px;
+      margin-bottom:6px;
     }
 
-    .heroMedia{
-      padding:18px;
-      overflow:hidden;
+    .heroRight{
       position:relative;
+      overflow:hidden;
+      padding:16px;
     }
     .heroImg{
-      width:100%;
-      height:100%;
-      min-height: 390px;
-      object-fit: cover;
       border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.12);
+      border:1px solid var(--line);
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
       background:#fff;
     }
-    .heroOverlay{
+    .heroBadge{
       position:absolute;
-      left:18px; right:18px; bottom:18px;
-      padding:14px;
-      border-radius:16px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.88);
+      left:16px;
+      right:16px;
+      bottom:16px;
+      padding:14px 16px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.82);
       backdrop-filter: blur(10px);
       display:flex;
-      flex-direction:column;
-      gap:6px;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-end;
+      box-shadow: var(--shadow2);
     }
-    .heroOverlay strong{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:13px;
+    .heroBadge strong{
+      font-family: var(--serif);
+      font-size:16px;
       letter-spacing:.2px;
-      color: var(--ink);
     }
-    .heroOverlay span{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    .heroBadge span{
+      font-family: var(--sans);
       font-size:12px;
-      color: var(--muted);
+      color: var(--muted2);
+      display:block;
+      margin-top:4px;
     }
 
-    /* Section headings */
+    /* Section header */
     .kicker{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      letter-spacing:.18em;
+      font-family: var(--sans);
       font-size:11px;
-      color: var(--muted);
+      letter-spacing:.16em;
       text-transform:uppercase;
+      color: var(--muted2);
       margin:0 0 10px;
     }
     h2{
-      margin:0 0 10px;
-      font-size: clamp(22px, 2.2vw, 32px);
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.6vw, 34px);
       letter-spacing:-.4px;
-      color: var(--ink);
+      margin:0 0 12px;
     }
     .lead{
-      margin:0 0 22px;
+      font-family: var(--sans);
       color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.65;
-      max-width: 76ch;
+      line-height:1.75;
+      margin:0 0 26px;
+      max-width: 78ch;
     }
 
-    .twoCol{
+    /* Pricing */
+    .priceGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:18px;
+      gap:16px;
+      margin-top:6px;
     }
-    .panel{padding:20px}
-    .panel h3{
-      margin:0 0 8px;
-      font-size: 16px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      letter-spacing:.1px;
-      color: var(--ink);
-    }
-    .panel p, .panel li{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--muted);
-      line-height:1.65;
-      font-size: 14px;
-    }
-    .panel ul{margin:10px 0 0; padding-left:18px}
-    .panel li{margin:6px 0}
-
-    /* Cute engagement blocks */
-    .cuteGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:14px;
-      margin-top:18px;
-    }
-    .cute{
-      padding:16px;
-      border-radius: 18px;
-      border:1px solid rgba(15,23,42,.10);
-      background: #fff;
-    }
-    .cute .emoji{
-      width:44px; height:44px;
-      border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(37,99,235,.08);
-      border:1px solid rgba(37,99,235,.18);
+    .priceCard{padding:22px}
+    .priceTop{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
       margin-bottom:10px;
+    }
+    .priceCard h3{
+      font-family: var(--sans);
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin:0;
+      color: var(--muted2);
+    }
+    .price{
+      font-family: var(--serif);
+      font-size:28px;
+      margin:0;
+    }
+    .priceCard p{
+      font-family: var(--sans);
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .miniList{
+      margin:14px 0 0;
+      padding-left:18px;
+      font-family: var(--sans);
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .miniList li{margin:6px 0}
+
+    /* Split */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .panel{padding:24px}
+    .panel h3{
+      font-family: var(--serif);
+      margin:0 0 10px;
       font-size:20px;
     }
-    .cute strong{
-      display:block;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--ink);
-      font-size:13px;
-      letter-spacing:.2px;
-      margin-bottom:6px;
-    }
-    .cute p{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    .panel p, .panel li{
+      font-family: var(--sans);
       color: var(--muted);
-      font-size:13px;
-      line-height:1.55;
+      line-height:1.75;
+      font-size:14px;
     }
+    .panel ul{margin:12px 0 0; padding-left:18px}
 
     /* Gallery */
     .galleryGrid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
       align-items:stretch;
     }
-    .galleryMain img{
+    .featured{padding:16px}
+    .featured img{
       width:100%;
       height: 420px;
       object-fit: cover;
       border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.12);
+      border:1px solid var(--line);
       background:#fff;
     }
-    .galleryAside{display:flex; flex-direction:column; gap:14px}
-    .placeholder{
-      border:1px dashed rgba(15,23,42,.22);
-      border-radius:16px;
-      padding:16px;
-      background: rgba(37,99,235,.04);
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    .note{
+      margin-top:12px;
+      font-family: var(--sans);
+      color: var(--muted2);
       font-size:13px;
-      line-height:1.55;
+      line-height:1.6;
     }
-    code{
+    .asideStack{display:flex; flex-direction:column; gap:14px}
+    .asideCard{padding:18px}
+    .tag{
+      display:inline-flex;
+      font-family: var(--sans);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: var(--muted2);
+      margin-bottom:10px;
+    }
+    .asideCard strong{
+      display:block;
+      font-family: var(--serif);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+    .asideCard p{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .code{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background: rgba(15,23,42,.06);
-      padding: 2px 6px;
-      border-radius: 8px;
-      border:1px solid rgba(15,23,42,.08);
+      background: rgba(11,13,18,.04);
+      border:1px solid var(--line);
+      padding: 2px 8px;
+      border-radius: 999px;
       font-size: 12px;
       color: var(--ink);
     }
 
+    /* CTA band */
+    .ctaBand{
+      padding:26px;
+      background: linear-gradient(135deg, rgba(31,75,216,.10) 0%, rgba(11,13,18,.04) 60%, rgba(255,255,255,1) 100%);
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow2);
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .ctaBand h3{
+      font-family: var(--serif);
+      font-size:22px;
+      margin:0 0 6px;
+    }
+    .ctaBand p{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14px;
+      max-width: 70ch;
+    }
+
     /* Footer */
     footer{
-      padding:28px 0;
-      border-top:1px solid rgba(15,23,42,.10);
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:12px;
-      background: rgba(255,255,255,.6);
+      padding:30px 0;
+      border-top:1px solid var(--line);
+      background: rgba(255,255,255,.65);
     }
     .footerRow{
       display:flex;
       justify-content:space-between;
-      gap:12px;
+      gap:14px;
       flex-wrap:wrap;
       align-items:center;
+      font-family: var(--sans);
+      font-size:12px;
+      color: var(--muted2);
     }
 
     /* Responsive */
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr}
       .heroImg{min-height: 320px}
-      .twoCol{grid-template-columns: 1fr}
-      .priceRow{grid-template-columns: 1fr}
+      .priceGrid{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
       .galleryGrid{grid-template-columns: 1fr}
-      .galleryMain img{height: 360px}
-      .cuteGrid{grid-template-columns: 1fr}
-      .brand{min-width:unset}
+      .featured img{height: 360px}
+      .navLinks{display:none} /* keep it luxe, no clutter on mobile */
     }
   </style>
 </head>
@@ -413,115 +506,116 @@
   <!-- NAV -->
   <div class="navWrap">
     <div class="container">
-      <nav>
+      <nav aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="Oreo’s Legacy Kennel home">
-          <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo" />
-          <div class="name">
+          <div class="brandMark" aria-hidden="true">
+            <!-- Swap this to your real logo when ready -->
+            <img src="/images/oreo-logo-light.jpg" alt="" onerror="this.style.display='none';" />
+          </div>
+          <div class="brandText">
             <strong>Oreo’s Legacy Kennel</strong>
-            <span>Black • White • Blue • Cute with standards</span>
+            <span>Conyers, GA • Shih Tzu Stud Services</span>
           </div>
         </a>
 
-        <div class="navlinks" role="navigation" aria-label="Primary">
+        <div class="navLinks" role="navigation" aria-label="Site">
           <a href="#oreo">Oreo</a>
-          <a href="#services">Stud Services</a>
+          <a href="#services">Services</a>
           <a href="#credentials">Credentials</a>
           <a href="#gallery">Gallery</a>
           <a href="/newsletter.html">Newsletter</a>
           <a href="#contact">Contact</a>
+        </div>
+
+        <div class="navCTA">
+          <a class="btn btnGhost btnSmall" href="/newsletter.html">Join Newsletter</a>
+          <a class="btn btnBlue btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Inquire</a>
         </div>
       </nav>
     </div>
   </div>
 
   <!-- HERO -->
-  <div id="top" class="hero">
+  <header id="top" class="hero">
     <div class="container heroGrid">
-      <div class="card heroCard">
-        <div class="pill">✨ Rare coat • Registered • Georgia & Nationwide</div>
+      <div class="card heroLeft">
+        <div class="eyebrow">Georgia-first • Registered • Premium process</div>
 
-        <h1>Meet Oreo Winston — tiny, charming, and seriously well kept.</h1>
+        <h1>Boujee Shih Tzu energy.<br/>Meet Oreo Winston.</h1>
 
-        <p>
-          Oreo is a registered purebred Shih Tzu with a deep black coat that shows warm brown in sunlight,
-          plus clean white accents. He’s offered to ethical, quality-focused breeding programs — with clear terms,
-          protected health, and a smooth process.
+        <p class="heroCopy">
+          Oreo is a registered purebred Shih Tzu based in <strong>Conyers, Georgia</strong>.
+          He’s offered for intentional breeding programs only — with clear terms, a clean process, and
+          a brand that matches the quality.
         </p>
 
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Book a Breeding</a>
-          <a class="btn btnGhost" href="/newsletter.html">Join Oreo’s Newsletter</a>
-          <a class="btn btnGhost btnSmall" href="#services">See Pricing</a>
+        <div class="heroActions">
+          <a class="btn btnBlue" href="#services">View Stud Options</a>
+          <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Email Inquiry</a>
+          <a class="btn btnGhost" href="/newsletter.html">Oreo’s Newsletter</a>
         </div>
 
-        <div class="priceRow">
-          <div class="priceMini">
-            <div class="label">Option A</div>
-            <div class="amount">$2,100</div>
-            <p>Flat fee — clean and simple.</p>
+        <div class="heroMeta" aria-label="Key details">
+          <div class="metaItem">
+            <strong>Location</strong>
+            <span>Conyers, Georgia (Metro Atlanta)</span>
           </div>
-          <div class="priceMini">
-            <div class="label">Option B</div>
-            <div class="amount">$1,800 + pick</div>
-            <p>Lower fee + pick of the litter.</p>
+          <div class="metaItem">
+            <strong>Service area</strong>
+            <span>Georgia + select nationwide options</span>
           </div>
-        </div>
-
-        <div class="cuteGrid">
-          <div class="cute">
-            <div class="emoji">🫧</div>
-            <strong>Groomed & camera-ready</strong>
-            <p>Photos, personality, and presence. He’s built for “aww” and “wow.”</p>
-          </div>
-          <div class="cute">
-            <div class="emoji">🛡️</div>
-            <strong>Records shared privately</strong>
-            <p>Verification publicly. Full documents only for approved breeders.</p>
-          </div>
-          <div class="cute">
-            <div class="emoji">📦</div>
-            <strong>Nationwide capable</strong>
-            <p>Preferred method: shipped semen through a licensed repro vet.</p>
+          <div class="metaItem">
+            <strong>Contact</strong>
+            <span>info@oreoslegacykennel.com</span>
           </div>
         </div>
       </div>
 
-      <div class="card heroMedia">
-        <!-- Keep hero as oreo-2 so you still show something now -->
+      <div class="card heroRight">
+        <!-- HERO image stays oreo-2 so page looks filled today -->
         <img class="heroImg" src="/images/oreo-2.png" alt="Oreo Winston portrait photo" />
-        <div class="heroOverlay">
-          <strong>Oreo Winston</strong>
-          <span>Conyers, GA • Stud services • Serious inquiries only</span>
+        <div class="heroBadge">
+          <div>
+            <strong>Oreo Winston</strong>
+            <span>Shih Tzu • Stud services • Conyers, GA</span>
+          </div>
+          <div class="muted2" style="text-align:right;font-family:var(--sans);font-size:12px;">
+            Premium • Clean terms • No chaos
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- OREO -->
   <section id="oreo" class="section">
     <div class="container">
-      <p class="kicker">About Oreo</p>
-      <h2>Cute, compact, and confident.</h2>
+      <p class="kicker">About</p>
+      <h2>Small dog. Big presence.</h2>
       <p class="lead">
-        Oreo is tiny and rare — with a coat that looks black at first glance but warms up in the sun.
-        He’s offered for intentional breeding only, with a clear screening process and a standard agreement.
+        Oreo’s page is intentionally minimal: elegant visuals, clear terms, and high-trust positioning.
+        The fun content lives in the newsletter and gallery — the home page stays conversion-focused.
       </p>
 
-      <div class="twoCol">
+      <div class="split">
         <div class="card panel">
-          <h3>What you’re really getting</h3>
+          <h3>What makes Oreo “premium”</h3>
           <ul>
-            <li>Premium presentation (he photographs extremely well)</li>
-            <li>Verified credentials and protected record handling</li>
-            <li>Clear pricing + repeat policy (no confusion, no drama)</li>
+            <li>Strong presentation and temperament (camera-ready, confident, well-kept)</li>
+            <li>Clear screening and breeder alignment (no messy arrangements)</li>
+            <li>Documentation handled privately and professionally</li>
           </ul>
         </div>
 
         <div class="card panel">
-          <h3>Engagement vibe</h3>
-          <p>
-            Oreo’s page is meant to be fun — cute photos, funny quotes, cool facts — while keeping the
-            business side clean and professional.
+          <h3>How this works</h3>
+          <ul>
+            <li>Inquiry → quick screening + availability</li>
+            <li>Agreement → terms locked, process confirmed</li>
+            <li>Coordination → timing + handling (best practice)</li>
+          </ul>
+          <p style="margin-top:12px;">
+            <a class="btn btnBlue btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Start with an email</a>
           </p>
         </div>
       </div>
@@ -532,49 +626,47 @@
   <section id="services" class="section">
     <div class="container">
       <p class="kicker">Stud Services</p>
-      <h2>Clear options, premium handling.</h2>
+      <h2>Two options. Zero confusion.</h2>
       <p class="lead">
-        Choose a flat fee or a fee + puppy arrangement. A stud agreement is required before any breeding and
-        before sharing full records.
+        Choose the structure that fits your breeding program. Terms are finalized via agreement before any coordination.
       </p>
 
-      <div class="twoCol">
-        <div class="card panel">
-          <h3>Option A — $2,100 flat fee</h3>
-          <ul>
-            <li>Best for breeders who want simple terms</li>
-            <li>Preferred method: shipped semen coordinated through a licensed reproduction veterinarian</li>
-            <li>Includes one free repeat breeding (see policy)</li>
+      <div class="priceGrid">
+        <div class="card priceCard">
+          <div class="priceTop">
+            <h3>Option A</h3>
+            <p class="price">$2,100</p>
+          </div>
+          <p>Flat fee. Clean and simple.</p>
+          <ul class="miniList">
+            <li>Best for straightforward arrangements</li>
+            <li>Includes repeat policy details in agreement</li>
+            <li>Georgia-based with nationwide coordination where appropriate</li>
           </ul>
         </div>
 
-        <div class="card panel">
-          <h3>Option B — $1,800 + pick of the litter</h3>
-          <ul>
-            <li>Lower upfront cost + a quality pick arrangement</li>
-            <li>Pick timing and selection method defined in the agreement</li>
-            <li>Preferred method: shipped semen coordinated through a licensed reproduction veterinarian</li>
+        <div class="card priceCard">
+          <div class="priceTop">
+            <h3>Option B</h3>
+            <p class="price">$1,800 + pick</p>
+          </div>
+          <p>Lower upfront cost plus pick of the litter terms.</p>
+          <ul class="miniList">
+            <li>Pick timing + selection rules defined in writing</li>
+            <li>Ideal for long-term breeder relationships</li>
+            <li>Handled professionally — no vague promises</li>
           </ul>
         </div>
       </div>
 
-      <div class="twoCol" style="margin-top:18px;">
-        <div class="card panel">
-          <h3>Repeat breeding policy</h3>
-          <p>
-            One free repeat is offered if no pregnancy is confirmed within 12 months, provided all agreement terms
-            were followed and veterinary timing/handling protocols were met.
-          </p>
+      <div style="margin-top:22px" class="ctaBand" aria-label="Primary conversion block">
+        <div>
+          <h3>Ready to discuss availability?</h3>
+          <p>Serious inquiries only. Email <strong>info@oreoslegacykennel.com</strong> with your program details and preferred option.</p>
         </div>
-
-        <div class="card panel">
-          <h3>Start here</h3>
-          <p>
-            Email to request availability, screening, and next steps.
-          </p>
-          <p style="margin-top:10px;">
-            <a class="btn btnPrimary btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Email: info@oreoslegacykennel.com</a>
-          </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Email Inquiry</a>
+          <a class="btn btnGhost" href="/newsletter.html">Newsletter</a>
         </div>
       </div>
     </div>
@@ -583,54 +675,37 @@
   <!-- CREDENTIALS -->
   <section id="credentials" class="section">
     <div class="container">
-      <p class="kicker">Credentials & Health</p>
-      <h2>Verified — with privacy and control.</h2>
+      <p class="kicker">Credentials</p>
+      <h2>Verified — shared with control.</h2>
       <p class="lead">
-        Trust matters, but oversharing gets documents misused. This site shows verification publicly and shares full records privately.
+        This site shows verification publicly and shares full records privately with approved breeders.
+        That’s intentional — it protects Oreo and keeps the process clean.
       </p>
 
-      <div class="twoCol">
+      <div class="split">
         <div class="card panel">
-          <h3>Credentials</h3>
+          <h3>Certificate preview (watermarked)</h3>
           <p>
-            Oreo (“Oreo Winston”) is a registered purebred Shih Tzu with documented lineage through the
-            Continental Kennel Club (CKC). Registration documentation is on file and available privately
-            to approved breeders upon request.
+            View the preview PDF here. Full registration details are provided privately after screening and/or agreement.
           </p>
-
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btnGhost btnSmall" href="/docs/oreo-winston-certificate-watermark.pdf" target="_blank" rel="noopener">
-              View Certificate Preview (PDF)
-            </a>
-            <a class="btn btnGhost btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Records%20Request%20-%20Oreo%20Winston">
-              Request Full Records
-            </a>
-          </div>
-
-          <p class="muted" style="margin-top:10px;">
-            The preview is watermarked/redacted to protect sensitive details.
+          <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn btnGhost btnSmall" href="/docs/oreo-winston-certificate-watermark.pdf" target="_blank" rel="noopener">View PDF Preview</a>
+            <a class="btn btnBlue btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Records%20Request%20-%20Oreo%20Winston">Request Full Records</a>
           </p>
+          <p class="muted2" style="margin-top:10px;">Preview is intentionally watermarked/redacted.</p>
         </div>
 
         <div class="card panel">
-          <h3>Health & Wellness</h3>
+          <h3>Georgia-based, nationwide capable</h3>
           <p>
-            Oreo is in excellent health and is current on core vaccinations, including rabies, as verified by a licensed
-            Georgia veterinarian. For privacy and security, full veterinary records (rabies certificate, vaccine history,
-            and visit notes) are shared only with serious inquiries after initial screening and/or once a stud agreement
-            is initiated.
+            Oreo is based in Conyers, GA (Metro Atlanta). If you’re outside Georgia, we coordinate based on what’s safest,
+            cleanest, and most appropriate for your program.
           </p>
-
-          <h3 style="margin-top:14px;">Records Policy</h3>
-          <ul>
-            <li>Public listings show verification, not full document numbers.</li>
-            <li>Full records are provided directly to approved breeders via email.</li>
-            <li>Records are shared after screening and/or when a stud agreement is initiated.</li>
+          <ul style="margin-top:12px;">
+            <li>Professional coordination</li>
+            <li>Clear timelines</li>
+            <li>No “random DMs” process — everything stays documented</li>
           </ul>
-
-          <p style="margin-top:12px;">
-            <a class="btn btnPrimary btnSmall" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">Contact: info@oreoslegacykennel.com</a>
-          </p>
         </div>
       </div>
     </div>
@@ -640,36 +715,40 @@
   <section id="gallery" class="section">
     <div class="container">
       <p class="kicker">Gallery</p>
-      <h2>Featured photo (Oreo-1) + room to grow.</h2>
+      <h2>Featured (Oreo-1) — more coming.</h2>
       <p class="lead">
-        For now, the featured section uses <code>oreo-1</code> so you don’t see the same photo twice.
-        When you’re ready, we’ll add a clean grid and embed videos.
+        Featured uses <span class="code">oreo-1</span> so you don’t see the same photo twice. Hero stays <span class="code">oreo-2</span>.
+        Once you add videos, we’ll build a luxury grid + short reels section.
       </p>
 
       <div class="galleryGrid">
-        <div class="card panel galleryMain">
-          <!-- Featured is oreo-1 so it isn't duplicated -->
-          <img src="/images/oreo-1.jpg" alt="Oreo Winston featured photo (oreo-1)" onerror="this.onerror=null;this.src='/images/oreo-1.png';" />
-          <p class="muted" style="margin:12px 0 0;">
-            Featured: Oreo Winston (oreo-1)
-          </p>
+        <div class="card featured">
+          <!-- Try JPG first, fall back to PNG -->
+          <img src="/images/oreo-1.jpg" alt="Oreo Winston featured photo (oreo-1)"
+               onerror="this.onerror=null;this.src='/images/oreo-1.png';" />
+          <div class="note">Featured: Oreo Winston • Conyers, GA</div>
         </div>
 
-        <div class="galleryAside">
-          <div class="placeholder">
-            <strong>Current hero image:</strong><br/>
-            Hero shows <code>/images/oreo-2.png</code> (already in your repo). Featured shows <code>oreo-1</code> (you’ll add next).
+        <div class="asideStack">
+          <div class="card asideCard">
+            <span class="tag">Newsletter</span>
+            <strong>Funny quotes + cool facts</strong>
+            <p>That’s where the personality lives. Home page stays elegant. Newsletter builds your audience.</p>
+            <p style="margin-top:12px;">
+              <a class="btn btnBlue btnSmall" href="/newsletter.html">Join Oreo’s Newsletter</a>
+            </p>
           </div>
 
-          <div class="placeholder">
-            <strong>Video slot (coming soon):</strong><br/>
-            When ready, add a <code>/videos/oreo-1.mp4</code> and we’ll embed it here with a clean player.
+          <div class="card asideCard">
+            <span class="tag">Coming next</span>
+            <strong>Video section</strong>
+            <p>When you’re ready, add a file like <span class="code">/videos/oreo-1.mp4</span> and we’ll embed it cleanly.</p>
           </div>
 
-          <div class="placeholder">
-            <strong>Newsletter vibes:</strong><br/>
-            Cute photos + funny quotes + cool facts. Build a real audience, not just a listing.<br/><br/>
-            <a class="btn btnPrimary btnSmall" href="/newsletter.html">Go to Newsletter Signup</a>
+          <div class="card asideCard">
+            <span class="tag">Trust</span>
+            <strong>Documents handled privately</strong>
+            <p>Preview is public. Full records are shared only with approved breeders.</p>
           </div>
         </div>
       </div>
@@ -680,30 +759,28 @@
   <section id="contact" class="section">
     <div class="container">
       <p class="kicker">Contact</p>
-      <h2>Ready when you are.</h2>
+      <h2>Georgia-first. Easy to start.</h2>
       <p class="lead">
-        Located in Conyers, Georgia. We keep it fun on the front-end — and professional behind the scenes.
-        Records are shared privately with approved breeders after screening and/or when a stud agreement starts.
+        Email is the fastest path. Include your location, breeding goals, and which option you prefer.
       </p>
 
-      <div class="twoCol">
+      <div class="split">
         <div class="card panel">
           <h3>Email</h3>
-          <p>
+          <p style="margin-top:12px;">
             <a class="btn btnPrimary" href="mailto:info@oreoslegacykennel.com?subject=Stud%20Inquiry%20-%20Oreo%20Winston">
               info@oreoslegacykennel.com
             </a>
           </p>
-          <p class="muted">Use subject: “Stud Inquiry – Oreo Winston” for fastest response.</p>
+          <p class="muted2">Subject recommended: “Stud Inquiry – Oreo Winston”.</p>
         </div>
 
         <div class="card panel">
           <h3>Newsletter</h3>
-          <p>Get availability, photos, and Oreo content — delivered.</p>
-          <p>
-            <a class="btn btnGhost" href="/newsletter.html">Join Oreo’s Newsletter</a>
+          <p>Get updates, photos, availability, and Oreo content — delivered.</p>
+          <p style="margin-top:12px;">
+            <a class="btn btnBlue" href="/newsletter.html">Join Newsletter</a>
           </p>
-          <p class="muted">Separate page keeps the home page clean and conversion-focused.</p>
         </div>
       </div>
     </div>
@@ -711,9 +788,10 @@
 
   <footer>
     <div class="container footerRow">
-      <div>© 2025 Oreo’s Legacy Kennel. All rights reserved.</div>
-      <div class="muted">
+      <div>© 2025 Oreo’s Legacy Kennel</div>
+      <div>
         <a href="/newsletter.html">Newsletter</a> •
+        <a href="#services">Services</a> •
         <a href="#credentials">Credentials</a> •
         <a href="mailto:info@oreoslegacykennel.com">Email</a>
       </div>
