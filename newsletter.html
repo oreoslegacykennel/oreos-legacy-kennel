@@ -6,7 +6,7 @@
   <title>Oreo’s Newsletter | Oreo’s Legacy Kennel</title>
   <meta name="description" content="Subscribe for Oreo updates, funny quotes, cool facts, and breeding availability in Georgia & nationwide." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b0d12" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,31 +131,43 @@
       color:#fff !important;
     }
 
-    /* Marquee directly under navigation menu (WHITE + seamless loop) */
+    /* Marquee (WHITE + seamless loop) */
     .marquee{
+      border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
       background:#ffffff;
       overflow:hidden;
       position:relative;
     }
-    .marqueeInner{
-      display:flex;
-      width:100%;
+    .marqueeShell{
+      padding:10px 0;
+      overflow:hidden;
     }
+
+    /* One track containing 2 identical sets.
+       We scroll by half the track width, so it loops perfectly. */
     .marqueeTrack{
       display:flex;
+      align-items:center;
       gap:10px;
-      padding:10px 0;
-      flex:0 0 auto;
       width:max-content;
-      animation: marqueeScroll 26s linear infinite;
+      animation: marqueeScroll 28s linear infinite;
       will-change: transform;
     }
     .marquee:hover .marqueeTrack{animation-play-state:paused}
+
     @keyframes marqueeScroll{
-      from{transform: translateX(0)}
-      to{transform: translateX(-100%)}
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
     }
+
+    .marqueeSet{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
     .marqueeImg{
       width:140px;
       aspect-ratio: 1 / 1;
@@ -170,9 +182,10 @@
       height:100%;
       object-fit:cover;
       display:block;
+      background:#fff;
     }
 
-    /* Hero layout: clean + aligned */
+    /* Hero layout */
     main{padding:34px 0 54px}
     .hero{
       display:grid;
@@ -214,7 +227,7 @@
     }
     .points strong{color:var(--ink); font-weight:600}
 
-    /* Form column: single clean panel */
+    /* Form column */
     .panel{
       border:1px solid var(--line);
       border-radius: var(--r);
@@ -244,12 +257,12 @@
       line-height:1.6;
     }
 
-    /* Minimal MailerLite restyle (no weird boxes) */
+    /* Minimal MailerLite restyle */
     #mlb2-34821352.ml-form-embedContainer{ width:100% !important; display:block !important; margin:0 !important; }
     #mlb2-34821352 .ml-form-embedWrapper.embedForm{ max-width:100% !important; width:100% !important; }
     #mlb2-34821352 .ml-form-embedWrapper{ border:none !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important; }
     #mlb2-34821352 .ml-form-embedBody{ padding:0 !important; }
-    #mlb2-34821352 .ml-form-embedContent{ display:none !important; } /* we provide our own header */
+    #mlb2-34821352 .ml-form-embedContent{ display:none !important; }
     #mlb2-34821352 input[type="email"]{
       width:100% !important;
       border-radius:14px !important;
@@ -328,11 +341,7 @@
       border-color: rgba(11,13,18,.18);
       transform: translateY(-1px);
     }
-    .icon{
-      width:16px;
-      height:16px;
-      display:inline-block;
-    }
+    .icon{ width:16px; height:16px; display:inline-block; }
     .social span{font-size:12px}
 
     @media (max-width: 980px){
@@ -340,6 +349,7 @@
       .navLinks{display:none}
       .headline{font-size: clamp(38px, 10vw, 52px)}
       .brand{min-width: unset}
+      .marqueeImg{ width:120px; }
     }
   </style>
 </head>
@@ -369,37 +379,38 @@
       </div>
     </div>
 
-    <!-- Marquee directly under navigation (white + no whitespace) -->
+    <!-- Marquee (fixed + seamless) -->
     <div class="marquee" aria-label="Oreo photo strip">
-      <div class="container">
-        <div class="marqueeInner">
-          <!-- Track A -->
-          <div class="marqueeTrack" aria-hidden="true">
-            <div class="marqueeImg"><img src="/images/oreo-1.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-2.png?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-3.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-4.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-5.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-6.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-7.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-8.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-9.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-10.jpg?v=1" alt="Oreo photo">
+      <div class="container marqueeShell">
+        <div class="marqueeTrack" aria-hidden="true" id="marqueeTrack">
+
+          <div class="marqueeSet" id="marqueeSetA">
+            <div class="marqueeImg"><img src="/images/oreo-1.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-3.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-4.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-5.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-6.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-7.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-8.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-9.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-10.jpg" alt="Oreo photo" loading="lazy" decoding="async"></div>
           </div>
 
-          <!-- Track B (duplicate) -->
-          <div class="marqueeTrack" aria-hidden="true">
-            <div class="marqueeImg"><img src="/images/oreo-1.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-2.png?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-3.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-4.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-5.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-6.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-7.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-8.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-9.jpg?v=1"  alt="Oreo photo">
-            <div class="marqueeImg"><img src="/images/oreo-10.jpg?v=1" alt="Oreo photo">
+          <!-- Duplicate set for seamless loop -->
+          <div class="marqueeSet" id="marqueeSetB">
+            <div class="marqueeImg"><img src="/images/oreo-1.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-3.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-4.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-5.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-6.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-7.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-8.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-9.jpg"  alt="Oreo photo" loading="lazy" decoding="async"></div>
+            <div class="marqueeImg"><img src="/images/oreo-10.jpg" alt="Oreo photo" loading="lazy" decoding="async"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -408,7 +419,7 @@
   <main>
     <div class="container">
       <div class="hero">
-        <!-- Left: title + value -->
+        <!-- Left -->
         <section aria-label="Newsletter intro">
           <h1 class="headline">Oreo’s Newsletter</h1>
           <p class="sub">
@@ -423,11 +434,12 @@
           </ul>
 
           <p class="sub" style="margin-top:18px;">
-            Questions? Email <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue); font-weight:600;">info@oreoslegacykennel.com</a>.
+            Questions? Email
+            <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue); font-weight:600;">info@oreoslegacykennel.com</a>.
           </p>
         </section>
 
-        <!-- Right: Join the list -->
+        <!-- Right -->
         <aside class="panel" aria-label="Signup form">
           <div class="panelTop">
             <div class="kicker">Signup</div>
@@ -435,7 +447,7 @@
             <div class="note">Pick one or both lists, then subscribe.</div>
           </div>
 
-          <!-- ===== MailerLite Embed (your code, functionality intact) ===== -->
+          <!-- ===== MailerLite Embed (unchanged functionality) ===== -->
           <style type="text/css">
             .ml-form-embedSubmitLoad { display:inline-block; width:20px; height:20px; }
             .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; }
@@ -559,7 +571,8 @@
           <!-- ===== /MailerLite Embed ===== -->
 
           <p style="margin:14px 0 0; color:var(--muted); font-size:12px; line-height:1.6;">
-            Prefer email? <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue); font-weight:600;">info@oreoslegacykennel.com</a>
+            Prefer email?
+            <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue); font-weight:600;">info@oreoslegacykennel.com</a>
           </p>
         </aside>
       </div>
@@ -595,6 +608,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- Hard cache-bust: updates ALL marquee image src with a single version token -->
+  <script>
+    (function () {
+      // Change this value when you need to force-refresh the edge cache again.
+      var V = "20251230-1";
+
+      var imgs = document.querySelectorAll('#marqueeTrack img');
+      imgs.forEach(function (img) {
+        var src = img.getAttribute('src') || "";
+        if (!src) return;
+
+        // Remove any existing querystring, then append v=
+        var base = src.split('?')[0];
+        img.setAttribute('src', base + "?v=" + encodeURIComponent(V));
+      });
+    })();
+  </script>
 
 </body>
 </html>
