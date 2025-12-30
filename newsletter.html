@@ -131,32 +131,38 @@
       color:#fff !important;
     }
 
-    /* Marquee directly under navigation menu */
+    /* Marquee directly under navigation menu (BLACK + seamless loop) */
     .marquee{
       border-bottom:1px solid var(--line);
-      background:var(--wash);
+      background:#0b0d12;
       overflow:hidden;
+      position:relative;
+    }
+    .marqueeInner{
+      display:flex;
+      width:100%;
     }
     .marqueeTrack{
       display:flex;
       gap:10px;
       padding:10px 0;
+      flex:0 0 auto;
       width:max-content;
-      animation: scroll 26s linear infinite;
+      animation: marqueeScroll 26s linear infinite;
       will-change: transform;
     }
     .marquee:hover .marqueeTrack{animation-play-state:paused}
-    @keyframes scroll{
+    @keyframes marqueeScroll{
       from{transform: translateX(0)}
-      to{transform: translateX(-50%)}
+      to{transform: translateX(-100%)}
     }
     .marqueeImg{
       width:140px;
       aspect-ratio: 1 / 1;
       border-radius:16px;
       overflow:hidden;
-      border:1px solid rgba(11,13,18,.10);
-      background:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      background:#111;
       flex:0 0 auto;
     }
     .marqueeImg img{
@@ -364,22 +370,26 @@
       </div>
     </div>
 
-    <!-- Marquee directly under navigation -->
+    <!-- Marquee directly under navigation (seamless loop) -->
     <div class="marquee" aria-label="Oreo photo strip">
-      <div class="container" style="position:relative;">
-        <div class="marqueeTrack">
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+      <div class="container">
+        <div class="marqueeInner">
+          <div class="marqueeTrack" aria-hidden="true">
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          </div>
 
-          <!-- second set for seamless loop -->
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
-          <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          <!-- exact duplicate so it never "runs out" -->
+          <div class="marqueeTrack">
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -552,7 +562,6 @@
 
       <div class="social" aria-label="Social links">
         <a href="https://www.instagram.com/oreoslegacykennel/" target="_blank" rel="noopener" aria-label="Instagram">
-          <!-- Instagram icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M7.5 2.75h9A4.75 4.75 0 0 1 21.25 7.5v9A4.75 4.75 0 0 1 16.5 21.25h-9A4.75 4.75 0 0 1 2.75 16.5v-9A4.75 4.75 0 0 1 7.5 2.75Z" stroke="currentColor" stroke-width="1.6"/>
             <path d="M12 16.25A4.25 4.25 0 1 0 12 7.75a4.25 4.25 0 0 0 0 8.5Z" stroke="currentColor" stroke-width="1.6"/>
@@ -561,7 +570,6 @@
         </a>
 
         <a href="https://x.com/oreoskennel" target="_blank" rel="noopener" aria-label="X">
-          <!-- X icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 18.5 10.6 13.2M13.4 10.1 18 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
             <path d="M6 5.5h4.7l7.3 13h-4.7L6 5.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
@@ -569,11 +577,11 @@
         </a>
 
         <a href="https://www.youtube.com/@OreosLegacyKennel" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M21.5 8.1a3 3 0 0 0-2.1-2.1C17.6 5.5 12 5.5 12 5.5s-5.6 0-7.4.5A3 3 0 0 0 2.5 8.1 31.6 31.6 0 0 0 2.5 12a31.6 31.6 0 0 0 .1 3.9 3 3 0 0 0 2.1 2.1c1.8.5 7.3.5 7.3.5s5.6 0 7.4-.5a3 3 0 0 0 2.1-2.1c.1-1.3.1-2.6.1-3.9s0-2.6-.1-3.9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M10.5 9.75v4.5l4-2.25-4-2.25Z" fill="currentColor"/>
-        </svg>
-      </a>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21.5 8.1a3 3 0 0 0-2.1-2.1C17.6 5.5 12 5.5 12 5.5s-5.6 0-7.4.5A3 3 0 0 0 2.5 8.1 31.6 31.6 0 0 0 2.5 12a31.6 31.6 0 0 0 .1 3.9 3 3 0 0 0 2.1 2.1c1.8.5 7.3.5 7.3.5s5.6 0 7.4-.5a3 3 0 0 0 2.1-2.1c.1-1.3.1-2.6.1-3.9s0-2.6-.1-3.9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M10.5 9.75v4.5l4-2.25-4-2.25Z" fill="currentColor"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
