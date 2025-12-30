@@ -503,5 +503,18 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  (function () {
+    var V = "20251230-1";
+    document.querySelectorAll('img').forEach(function (img) {
+      var src = img.getAttribute('src') || "";
+      if (!src.startsWith("/images/")) return;
+      var base = src.split("?")[0];
+      img.setAttribute("src", base + "?v=" + encodeURIComponent(V));
+    });
+  })();
+</script>
+
 </body>
 </html>
