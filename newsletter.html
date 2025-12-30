@@ -131,10 +131,10 @@
       color:#fff !important;
     }
 
-    /* Marquee directly under navigation menu (BLACK + seamless loop) */
+    /* Marquee directly under navigation menu (WHITE + seamless loop) */
     .marquee{
       border-bottom:1px solid var(--line);
-      background:#0b0d12;
+      background:#ffffff;
       overflow:hidden;
       position:relative;
     }
@@ -161,8 +161,8 @@
       aspect-ratio: 1 / 1;
       border-radius:16px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background:#111;
+      border:1px solid rgba(11,13,18,.12);
+      background:#fff;
       flex:0 0 auto;
     }
     .marqueeImg img{
@@ -351,7 +351,6 @@
       <div class="nav">
         <a class="brand" href="/" aria-label="Oreo’s Legacy Kennel home">
           <div class="brandLogo" aria-hidden="true">
-            <!-- Update this path if your logo filename differs -->
             <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo">
           </div>
           <div class="brandText">
@@ -370,11 +369,15 @@
       </div>
     </div>
 
-    <!-- Marquee directly under navigation (seamless loop) -->
+    <!-- Marquee directly under navigation (white + no whitespace) -->
     <div class="marquee" aria-label="Oreo photo strip">
       <div class="container">
         <div class="marqueeInner">
+          <!-- Track A -->
           <div class="marqueeTrack" aria-hidden="true">
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
@@ -382,8 +385,11 @@
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
           </div>
 
-          <!-- exact duplicate so it never "runs out" -->
-          <div class="marqueeTrack">
+          <!-- Track B (duplicate) -->
+          <div class="marqueeTrack" aria-hidden="true">
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
+            <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
             <div class="marqueeImg"><img src="/images/oreo-2.png" alt="Oreo photo"></div>
@@ -417,7 +423,7 @@
           </p>
         </section>
 
-        <!-- Right: Join the list (beside the title) -->
+        <!-- Right: Join the list -->
         <aside class="panel" aria-label="Signup form">
           <div class="panelTop">
             <div class="kicker">Signup</div>
