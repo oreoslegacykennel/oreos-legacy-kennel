@@ -4,156 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Oreo’s Newsletter | Oreo’s Legacy Kennel</title>
-  <meta name="description" content="Subscribe for Oreo updates, funny quotes, cool facts, and breeding availability." />
+  <meta name="description" content="Subscribe for Oreo updates, funny quotes, cool facts, and breeding availability in Georgia & nationwide." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B0D12" />
+
+  <!-- Fonts (luxury: serif headline + clean sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- MailerLite font import (from your embed) -->
+  <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1766058");</style>
 
   <style>
     :root{
       --ink:#0b0d12;
-      --text:#0f172a;
-      --muted:#475569;
+      --paper:#ffffff;
+      --wash:#f7f7f9;
+      --line:rgba(11,13,18,.10);
+      --muted:rgba(11,13,18,.60);
 
-      --bg:#ffffff;
-      --bg2:#f7f9fc;
+      /* Blue: accent only */
+      --blue:#1f4bd8;
+      --blue2:#1636a3;
 
-      --line:#e6eaf2;
-      --panel:#ffffff;
-      --shadow: 0 14px 40px rgba(2, 6, 23, .08);
+      --serif:"Playfair Display", ui-serif, Georgia, serif;
+      --sans:"Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 
-      --blue:#2563eb;
-      --blue2:#1d4ed8;
-      --blueSoft:#e8f0ff;
-
-      --radius:18px;
-      --max: 1120px;
+      --max:1100px;
+      --r:22px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 10% -10%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 55%),
-        radial-gradient(900px 520px at 90% -10%, rgba(37,99,235,.10) 0%, rgba(37,99,235,0) 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-    }
-    a{color:var(--blue); text-decoration:none}
-    a:hover{color:var(--blue2)}
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-
-    .navWrap{
-      position:sticky; top:0; z-index:50;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(15,23,42,.08);
-    }
-    nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:12px;
-    }
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{
-      width:40px; height:40px; border-radius:12px;
-      border:1px solid rgba(15,23,42,.12);
-      background:#fff; object-fit:cover;
-    }
-    .brand .name{
-      display:flex; flex-direction:column; line-height:1.1;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    }
-    .brand .name strong{font-size:14px; letter-spacing:.2px; color: var(--ink)}
-    .brand .name span{font-size:12px; color:var(--muted)}
-    .navlinks{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:13px;
-    }
-    .navlinks a{
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent; color: var(--ink); opacity:.92;
-    }
-    .navlinks a:hover{
-      border-color:rgba(37,99,235,.18);
-      background: rgba(37,99,235,.06);
-      color: var(--ink); opacity:1;
-    }
-
-    .section{padding:56px 0}
-    .card{
-      background: var(--panel);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .wrap{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:18px;
-      align-items:start;
-    }
-    .panel{padding:22px}
-
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px; border:1px solid rgba(37,99,235,.22);
-      border-radius:999px; background: var(--blueSoft); color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:12px; letter-spacing:.2px;
-      width: fit-content;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(30px, 3.2vw, 44px);
-      letter-spacing: -0.7px;
-      line-height:1.05;
+      background: var(--paper);
       color: var(--ink);
     }
-    p{
-      margin:0 0 12px;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.7;
-      font-size:15px;
+
+    a{color:inherit; text-decoration:none}
+    a:hover{color:var(--blue)}
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    /* NAV */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
-    .list{
-      margin:14px 0 0;
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:baseline; gap:10px;
+      line-height:1;
+    }
+    .brand strong{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .brand span{
+      font-family:var(--sans);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .navLinks{
+      display:flex;
+      gap:16px;
+      font-family:var(--sans);
+      font-size:13px;
+      color:var(--muted);
+    }
+    .navLinks a{padding:6px 0}
+    .navLinks a:hover{color:var(--ink)}
+    .navCta{display:flex; gap:10px; align-items:center}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-family:var(--sans);
+      font-weight:600;
+      font-size:13px;
+      letter-spacing:.2px;
+      background:#fff;
+      cursor:pointer;
+    }
+    .btn:hover{border-color: rgba(31,75,216,.28)}
+    .btnBlue{
+      border-color: transparent;
+      background: var(--blue);
+      color:#fff;
+    }
+    .btnBlue:hover{background: var(--blue2)}
+    .btnText{
+      border:none; background:transparent; padding:0;
+      color:var(--muted);
+    }
+    .btnText:hover{color:var(--ink)}
+
+    /* LAYOUT */
+    main{padding:46px 0 10px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:26px;
+      align-items:start;
+    }
+
+    .kicker{
+      font-family:var(--sans);
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+    h1{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height:1.03;
+      margin:0 0 14px;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      font-family:var(--sans);
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
+      margin:0 0 18px;
+      max-width:56ch;
+    }
+
+    .miniList{
+      margin:16px 0 0;
       padding:0;
       list-style:none;
       display:grid;
       gap:10px;
+      font-family:var(--sans);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
     }
-    .list li{
-      border:1px solid rgba(15,23,42,.10);
-      background: #fff;
+    .miniList li{
+      border:1px solid var(--line);
       border-radius:16px;
       padding:12px 14px;
-    }
-    .list strong{
-      display:block;
-      color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:13px;
-      letter-spacing:.2px;
-      margin-bottom:4px;
-    }
-    .fine{
-      font-size:12px;
-      color: var(--muted);
-      margin-top:14px;
-    }
-
-    .oreoPic{
-      width:100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.12);
       background:#fff;
     }
+    .miniList strong{color:var(--ink); font-weight:600}
 
-    /* ---- MailerLite: make it match your brand ---- */
-    /* Keep their functionality, but style the container like your site */
+    /* SQUARE IMAGE: this is the key fix */
+    .squareFrame{
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      overflow:hidden;
+      background: var(--wash);
+      aspect-ratio: 1 / 1; /* perfect square */
+      width:100%;
+    }
+    .squareFrame img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* FORM WRAP (keep simple, no giant “card” look) */
+    .formWrap{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background:#fff;
+      padding:18px;
+    }
+
+    /* ---- MailerLite minimal restyle ---- */
     #mlb2-34821352.ml-form-embedContainer{
       width:100% !important;
       display:block !important;
@@ -164,268 +206,277 @@
       width:100% !important;
     }
     #mlb2-34821352 .ml-form-embedWrapper{
-      border-radius:16px !important;
-      border:1px solid rgba(15,23,42,.10) !important;
+      border:none !important;
+      border-radius: 0 !important;
       box-shadow:none !important;
-      background:#fff !important;
+      background:transparent !important;
     }
     #mlb2-34821352 .ml-form-embedBody{
-      padding:18px !important;
+      padding:0 !important;
     }
+    #mlb2-34821352 .ml-form-embedContent{ margin:0 0 12px 0 !important; }
     #mlb2-34821352 .ml-form-embedContent h4{
-      font-size:24px !important;
-      margin:0 0 8px 0 !important;
+      font-family:var(--serif) !important;
+      font-size:26px !important;
+      margin:0 0 6px 0 !important;
+      color:var(--ink) !important;
       letter-spacing:-.3px !important;
-      color: var(--ink) !important;
     }
     #mlb2-34821352 .ml-form-embedContent p{
+      font-family:var(--sans) !important;
       font-size:14px !important;
-      color: var(--muted) !important;
-      margin:0 0 12px 0 !important;
+      color:var(--muted) !important;
+      margin:0 !important;
       line-height:1.6 !important;
     }
     #mlb2-34821352 input[type="email"]{
       border-radius:14px !important;
-      border:1px solid rgba(15,23,42,.16) !important;
+      border:1px solid rgba(11,13,18,.18) !important;
       padding:12px 12px !important;
       font-size:14px !important;
+      font-family:var(--sans) !important;
+    }
+    #mlb2-34821352 .ml-form-interestGroupsRowCheckbox .label-description{
+      font-family:var(--sans) !important;
+      color:var(--ink) !important;
+      font-weight:600 !important;
+    }
+    #mlb2-34821352 .ml-form-checkboxRow .label-description p,
+    #mlb2-34821352 .ml-form-embedPermissionsContent p{
+      font-family:var(--sans) !important;
+      color:var(--muted) !important;
     }
     #mlb2-34821352 .ml-form-embedSubmit button.primary{
       background: var(--blue) !important;
       border:1px solid var(--blue) !important;
-      border-radius:14px !important;
-      font-weight:900 !important;
+      border-radius:999px !important;
+      font-weight:700 !important;
       letter-spacing:.2px !important;
-      padding:12px !important;
+      padding:12px 14px !important;
+      font-family:var(--sans) !important;
     }
     #mlb2-34821352 .ml-form-embedSubmit button.primary:hover{
       background: var(--blue2) !important;
       border-color: var(--blue2) !important;
     }
-    #mlb2-34821352 .ml-form-checkboxRow .label-description p,
-    #mlb2-34821352 .ml-form-embedPermissionsContent p{
-      color: var(--muted) !important;
-    }
 
+    /* Footer */
     footer{
       padding:28px 0;
-      border-top:1px solid rgba(15,23,42,.10);
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-family:var(--sans);
       font-size:12px;
-      background: rgba(255,255,255,.6);
+      background:#fff;
       margin-top: 40px;
+    }
+    .footerRow{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
     @media (max-width: 980px){
-      .wrap{grid-template-columns: 1fr}
-      .oreoPic{height: 340px}
+      .grid{grid-template-columns:1fr}
+      .navLinks{display:none}
     }
   </style>
-
-  <!-- MailerLite font import (from your embed) -->
-  <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1766058");</style>
 </head>
 
 <body>
-  <div class="navWrap">
+  <header>
     <div class="container">
-      <nav>
+      <div class="nav">
         <a class="brand" href="/" aria-label="Oreo’s Legacy Kennel home">
-          <img src="/images/oreo-logo-light.jpg" alt="Oreo’s Legacy Kennel logo" />
-          <div class="name">
-            <strong>Oreo’s Legacy Kennel</strong>
-            <span>Newsletter</span>
-          </div>
+          <strong>Oreo’s Legacy Kennel</strong>
+          <span>Newsletter</span>
         </a>
 
-        <div class="navlinks" role="navigation" aria-label="Primary">
+        <nav class="navLinks" aria-label="Site">
           <a href="/">Home</a>
-          <a href="/#services">Stud Services</a>
+          <a href="/#services">Services</a>
           <a href="/#credentials">Credentials</a>
           <a href="/#gallery">Gallery</a>
           <a href="mailto:info@oreoslegacykennel.com">Email</a>
+        </nav>
+
+        <div class="navCta">
+          <a class="btn btnText" href="/">Back to Home</a>
+          <a class="btn btnBlue" href="mailto:info@oreoslegacykennel.com?subject=Newsletter%20Question">Email</a>
         </div>
-      </nav>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container wrap">
-      <div class="card panel">
-        <div class="pill">💌 Cute pics • funny quotes • cool facts</div>
-        <h1>Join Oreo’s Newsletter</h1>
-        <p>
-          This is where Oreo gets to be Oreo — playful updates, behind-the-scenes moments, and the occasional
-          “I’m clearly the boss here” energy.
-        </p>
-
-        <ul class="list">
-          <li>
-            <strong>Oreo Updates</strong>
-            Short, fun emails with photos + quotes + personality.
-          </li>
-          <li>
-            <strong>Oreo Breeding</strong>
-            Availability, process updates, and responsible breeding notes.
-          </li>
-        </ul>
-
-        <p class="fine">
-          Questions? Email <a href="mailto:info@oreoslegacykennel.com">info@oreoslegacykennel.com</a>.
-        </p>
       </div>
+    </div>
+  </header>
 
-      <div class="card panel">
-        <!-- Use oreo-2 on this page (since home uses hero oreo-2, featured oreo-1; this keeps the vibe alive) -->
-        <img class="oreoPic" src="/images/oreo-2.png" alt="Oreo Winston photo" />
+  <main>
+    <div class="container">
+      <div class="grid">
+        <!-- LEFT: copy -->
+        <div>
+          <div class="kicker">Cute. Chic. Limited.</div>
+          <h1>Oreo’s Newsletter</h1>
+          <p class="sub">
+            Photos, personality, and availability — without the clutter.
+            If you’re Georgia-based, this is where you’ll catch updates first.
+          </p>
 
-        <div style="margin-top:14px;">
-          <!-- ===== MailerLite Embed (your code, intact) ===== -->
+          <ul class="miniList">
+            <li><strong>Oreo Updates</strong> — cute pics, funny quotes, and mini moments.</li>
+            <li><strong>Oreo Breeding</strong> — availability + responsible process notes.</li>
+          </ul>
 
-          <style type="text/css">
-            /* LOADER */
-            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
-            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; }
-            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-            .ml-form-embedSubmitLoad:after {
-              content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%;
-              border: 4px solid #fff; border-color: #ffffff #ffffff #ffffff transparent;
-              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-            }
-            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
-          </style>
+          <p class="sub" style="margin-top:16px;">
+            Questions? Email <a href="mailto:info@oreoslegacykennel.com" style="color:var(--blue);">info@oreoslegacykennel.com</a>.
+          </p>
+        </div>
 
-          <div id="mlb2-34821352" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-34821352">
-            <div class="ml-form-align-center">
-              <div class="ml-form-embedWrapper embedForm">
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                  <div class="ml-form-embedContent">
-                    <h4>Oreo's Newsletter</h4>
-                    <p>Signup for news and special offers!</p>
-                  </div>
+        <!-- RIGHT: square image + form -->
+        <div>
+          <div class="squareFrame" aria-label="Oreo newsletter photo (square)">
+            <img src="/images/oreo-2.png" alt="Oreo Winston photo" />
+          </div>
 
-                  <form class="ml-block-form"
-                        action="https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/subscribe"
-                        data-code=""
-                        method="post"
-                        target="_blank">
-                    <div class="ml-form-formContent">
-                      <div class="ml-form-fieldRow ml-last-item">
-                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input aria-label="email" aria-required="true" type="email" class="form-control"
-                                 name="fields[email]" placeholder="Email" autocomplete="email">
+          <div class="formWrap" aria-label="Newsletter signup">
+            <!-- ===== MailerLite Embed (functionality intact) ===== -->
+
+            <style type="text/css">
+              .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+              .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; }
+              .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+              .ml-form-embedSubmitLoad:after {
+                content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%;
+                border: 4px solid #fff; border-color: #ffffff #ffffff #ffffff transparent;
+                animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+              }
+              @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+            </style>
+
+            <div id="mlb2-34821352" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-34821352">
+              <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <div class="ml-form-embedContent">
+                      <h4>Join the list</h4>
+                      <p>Georgia-first updates • cute content • availability</p>
+                    </div>
+
+                    <form class="ml-block-form"
+                          action="https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/subscribe"
+                          data-code=""
+                          method="post"
+                          target="_blank">
+
+                      <div class="ml-form-formContent">
+                        <div class="ml-form-fieldRow ml-last-item">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input aria-label="email" aria-required="true" type="email" class="form-control"
+                                   name="fields[email]" placeholder="Email" autocomplete="email">
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="ml-form-embedPermissions">
-                      <div class="ml-form-embedPermissionsContent default privacy-policy">
-                        <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
+                      <div class="ml-form-interestGroupsRow ml-block-groups ml-validate-required">
+                        <div class="ml-form-interestGroupsRowCheckbox group">
+                          <label>
+                            <input type="checkbox" name="groups[]" value="174170592279266540">
+                            <div class="label-description">Oreo Updates</div>
+                          </label>
+                        </div>
+
+                        <div class="ml-form-interestGroupsRowCheckbox last-group">
+                          <label>
+                            <input type="checkbox" name="groups[]" value="174170602193553316">
+                            <div class="label-description">Oreo Breeding</div>
+                          </label>
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="ml-form-interestGroupsRow ml-block-groups ml-validate-required">
-                      <div class="ml-form-interestGroupsRowCheckbox group">
-                        <label>
-                          <input type="checkbox" name="groups[]" value="174170592279266540">
-                          <div class="label-description">Oreo Updates</div>
+                      <div class="ml-form-checkboxRow ml-validate-required">
+                        <label class="checkbox">
+                          <input type="checkbox">
+                          <div class="label-description">
+                            <p>Opt in to receive news and updates.</p>
+                          </div>
                         </label>
                       </div>
 
-                      <div class="ml-form-interestGroupsRowCheckbox last-group">
-                        <label>
-                          <input type="checkbox" name="groups[]" value="174170602193553316">
-                          <div class="label-description">Oreo Breeding</div>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-checkboxRow ml-validate-required">
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <div class="label-description">
-                          <p>Opt in to receive news and updates.</p>
+                      <div class="ml-form-embedPermissions">
+                        <div class="ml-form-embedPermissionsContent default privacy-policy">
+                          <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
                         </div>
-                      </label>
-                    </div>
+                      </div>
 
-                    <div class="ml-form-recaptcha ml-validate-required" style="float:left;">
-                      <style type="text/css">
-                        .ml-form-recaptcha { margin-bottom: 20px; }
-                        .ml-form-recaptcha.ml-error iframe { border: solid 1px #ff0000; }
-                        @media screen and (max-width: 480px) {
-                          .ml-form-recaptcha { width: 220px!important }
-                          .g-recaptcha {
-                            transform: scale(0.78);
-                            -webkit-transform: scale(0.78);
-                            transform-origin: 0 0;
-                            -webkit-transform-origin: 0 0;
+                      <div class="ml-form-recaptcha ml-validate-required" style="float:left;">
+                        <style type="text/css">
+                          .ml-form-recaptcha { margin-bottom: 16px; }
+                          .ml-form-recaptcha.ml-error iframe { border: solid 1px #ff0000; }
+                          @media screen and (max-width: 480px) {
+                            .ml-form-recaptcha { width: 220px!important }
+                            .g-recaptcha {
+                              transform: scale(0.78);
+                              -webkit-transform: scale(0.78);
+                              transform-origin: 0 0;
+                              -webkit-transform-origin: 0 0;
+                            }
                           }
-                        }
-                      </style>
-                      <script src="https://www.google.com/recaptcha/api.js"></script>
-                      <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                    </div>
+                        </style>
+                        <script src="https://www.google.com/recaptcha/api.js"></script>
+                        <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+                      </div>
 
-                    <input type="hidden" name="ml-submit" value="1">
+                      <input type="hidden" name="ml-submit" value="1">
 
-                    <div class="ml-form-embedSubmit">
-                      <button type="submit" class="primary">Subscribe</button>
-                      <button disabled="disabled" style="display:none;" type="button" class="loading">
-                        <div class="ml-form-embedSubmitLoad"></div>
-                        <span class="sr-only">Loading...</span>
-                      </button>
-                    </div>
+                      <div class="ml-form-embedSubmit">
+                        <button type="submit" class="primary">Subscribe</button>
+                        <button disabled="disabled" style="display:none;" type="button" class="loading">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                          <span class="sr-only">Loading...</span>
+                        </button>
+                      </div>
 
-                    <input type="hidden" name="anticsrf" value="true">
-                  </form>
-                </div>
-
-                <div class="ml-form-successBody row-success" style="display:none">
-                  <div class="ml-form-successContent">
-                    <h4>Thank you!</h4>
-                    <p>You have successfully joined our subscriber list.</p>
+                      <input type="hidden" name="anticsrf" value="true">
+                    </form>
                   </div>
+
+                  <div class="ml-form-successBody row-success" style="display:none">
+                    <div class="ml-form-successContent">
+                      <h4>Thank you!</h4>
+                      <p>You have successfully joined our subscriber list.</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
+
+            <script>
+              function ml_webform_success_34821352() {
+                var $ = ml_jQuery || jQuery;
+                $('.ml-subscribe-form-34821352 .row-success').show();
+                $('.ml-subscribe-form-34821352 .row-form').hide();
+              }
+            </script>
+
+            <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+            <script>
+              fetch("https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/takel")
+            </script>
+
+            <!-- ===== /MailerLite Embed ===== -->
           </div>
-
-          <script>
-            function ml_webform_success_34821352() {
-              var $ = ml_jQuery || jQuery;
-              $('.ml-subscribe-form-34821352 .row-success').show();
-              $('.ml-subscribe-form-34821352 .row-form').hide();
-            }
-          </script>
-
-          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-          <script>
-            fetch("https://assets.mailerlite.com/jsonp/1991447/forms/174170509686080530/takel")
-          </script>
-
-          <!-- ===== /MailerLite Embed ===== -->
         </div>
       </div>
     </div>
-
-    <div class="container" style="margin-top:18px;">
-      <div class="card panel">
-        <p style="margin:0;">
-          Want to talk breeding directly instead? Email
-          <a href="mailto:info@oreoslegacykennel.com">info@oreoslegacykennel.com</a>.
-        </p>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center;">
-      <div>© 2025 Oreo’s Legacy Kennel. All rights reserved.</div>
+    <div class="container footerRow">
+      <div>© 2025 Oreo’s Legacy Kennel</div>
       <div>
         <a href="/">Home</a> •
-        <a href="/#services">Stud Services</a> •
+        <a href="/#services">Services</a> •
         <a href="mailto:info@oreoslegacykennel.com">Email</a>
       </div>
     </div>
